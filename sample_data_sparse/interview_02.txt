@@ -1,0 +1,15 @@
+Interviewee: Tom Hardy
+Role: Warehouse Supervisor
+Company: Different logistics company
+Date: 2024-02-24
+User Type: End user
+
+---
+
+Interviewer: What frustrates you most?
+
+Tom: Mobile app crashes constantly. I'm on the floor all day, can't use desktop. Every time I try to scan a package, 50% chance the app crashes and I lose my progress.
+
+Interviewer: Have you reported this?
+
+Tom: Many times. Support says "we're working on it" for six months now. My team has started using paper and entering data at end of day. We're basically not using your app anymore.

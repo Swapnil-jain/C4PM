@@ -1,0 +1,23 @@
+Interviewee: Jordan Kim
+Role: Site Reliability Engineer
+Company: E-commerce platform (200 employees)
+Date: 2024-02-03
+User Type: Technical Lead
+
+---
+
+Interviewer: What keeps you up at night about your infrastructure?
+
+Jordan: False positives. We get 200+ alerts per day. Maybe 5 of them actually matter. My team has alert fatigue - they've started ignoring things because most of it is noise.
+
+Interviewer: How did you get to this state?
+
+Jordan: Every time something breaks, someone adds an alert. But nobody ever removes them. And they're not smart - they don't know context. CPU spike at 3am during batch processing? That's normal. CPU spike at 2pm? That's a problem. But the alert doesn't know the difference.
+
+Interviewer: What have you tried?
+
+Jordan: We spent a month tuning thresholds. It helped a bit, but it's whack-a-mole. The real issue is our alerts don't understand what "normal" looks like for our system.
+
+Interviewer: What would the ideal solution look like?
+
+Jordan: Something that learns our patterns. Knows that Monday mornings are always busy. Knows that our payment service is more critical than our analytics service. And when it does alert, tells me WHY this is different from normal, not just "CPU is high."

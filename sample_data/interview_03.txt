@@ -1,0 +1,31 @@
+Interviewee: Priya Patel
+Role: Founder/CEO
+Company: Early-stage startup (12 people)
+Date: 2024-01-20
+User Type: Founder doing PM work
+
+---
+
+Interviewer: As a founder, how do you handle product decisions?
+
+Priya: I do everything myself right now. Talk to users, synthesize feedback, write specs, work with engineers. It's unsustainable but we can't afford a PM yet.
+
+Interviewer: What's the hardest part?
+
+Priya: Keeping track of what users actually said versus what I think they said. After 30 calls, everything blurs together. I'll tell my engineer "users hate the dashboard" but when he asks "which users? what specifically?" I can't always remember.
+
+Interviewer: How do you document feedback currently?
+
+Priya: I take notes during calls, dump them in a Google Doc, and try to tag patterns. But I never go back and re-read everything. There's no time. So I'm basically operating on vibes and recent memory.
+
+Interviewer: What would change if you had better tooling?
+
+Priya: I could make faster decisions with more confidence. Right now I second-guess everything because I know my data is incomplete. If I could ask "what do enterprise users complain about most?" and get an actual answer with quotes, I'd save hours every week.
+
+Interviewer: What about writing specs for engineers?
+
+Priya: That's another pain point. I write these specs trying to explain what to build, but engineers have questions I didn't anticipate. "What about edge case X?" "Did users mention Y?" I don't always know. If the spec came with all the supporting evidence attached, they could find answers themselves.
+
+Interviewer: Have you tried AI tools for this?
+
+Priya: ChatGPT sometimes, but I have to manually paste transcripts and ask the right questions. There's no system. And the outputs aren't structured enough to hand to engineers. I need something designed for this workflow, not a general chatbot.

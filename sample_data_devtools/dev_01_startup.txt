@@ -1,0 +1,27 @@
+Interviewee: Nina Rodriguez
+Role: CTO
+Company: Seed-stage fintech (5 engineers)
+Date: 2024-02-18
+User Type: Decision maker, small team
+
+---
+
+Interviewer: You've been evaluating our API platform. What's your impression?
+
+Nina: The API itself is great. Clean design, good documentation. But everything around it is a nightmare for a small team.
+
+Interviewer: Like what?
+
+Nina: Pricing. I have no idea what we'll pay. There's usage-based pricing with like 15 different dimensions. API calls, bandwidth, compute time, storage, something called "processing units." I tried to estimate our costs and gave up after an hour. We're a startup - we need predictability.
+
+Interviewer: What would help with pricing?
+
+Nina: A calculator that actually works. Or better - pricing tiers. "Startup tier: $500/month, includes X calls and Y storage." I don't want to be a spreadsheet wizard to use your product. Also, billing alerts. I'm terrified of a surprise $10k bill because some bug caused infinite API calls.
+
+Interviewer: What about the technical side?
+
+Nina: The SDKs are outdated. Your Python SDK still uses requests instead of httpx, doesn't support async, and has type hints from 2019. My engineers complain every time they use it. We've written our own wrapper which defeats the purpose of having an SDK.
+
+Interviewer: Anything else?
+
+Nina: Rate limiting is opaque. We hit limits and get a 429 with no information about when we can retry or which limit we hit. Are we hitting per-second limits? Per-minute? Per-endpoint? Per-API-key? I have to guess and add exponential backoff everywhere.

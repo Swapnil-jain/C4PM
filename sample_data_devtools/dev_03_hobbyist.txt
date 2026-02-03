@@ -1,0 +1,27 @@
+Interviewee: Alex Turner
+Role: Student / Side project developer
+Company: N/A
+Date: 2024-02-20
+User Type: Hobbyist, free tier
+
+---
+
+Interviewer: You signed up last month. How's it going?
+
+Alex: I almost gave up on day one. Getting from "I have an API key" to "I made my first successful call" took me four hours.
+
+Interviewer: What was difficult?
+
+Alex: The quickstart guide assumes I already know things I don't. It says "set up authentication" and links to a page with five different auth methods. Which one do I use? For a side project, I just want the simplest thing that works. Don't make me read about OAuth vs API keys vs service accounts.
+
+Interviewer: Did you reach out for help?
+
+Alex: I tried Discord but it's overwhelming. Thousands of messages, no search that works, and the "help" channel is just people asking questions with no answers. I found a tutorial on YouTube that was more helpful than your official docs.
+
+Interviewer: What would have helped?
+
+Alex: A "I'm a beginner, just show me the code" button. Copy-paste code that works. Not "here's the concept of authentication" - just give me the curl command and the Python equivalent. I'll learn the concepts later when I care.
+
+Interviewer: What about the free tier?
+
+Alex: The free tier is so limited it's almost useless for learning. 100 API calls per day? I burn through that in 20 minutes of testing. By the time I figure out what I'm doing, I'm locked out until tomorrow. Either give me enough calls to learn or don't bother having a free tier.

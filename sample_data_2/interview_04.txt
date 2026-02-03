@@ -1,0 +1,27 @@
+Interviewee: Casey Park
+Role: Platform Engineer
+Company: Media streaming startup (45 employees)
+Date: 2024-02-07
+User Type: Builder
+
+---
+
+Interviewer: What's broken about your current setup?
+
+Casey: Configuration drift. We have 40 microservices and I guarantee you at least 10 of them have config that doesn't match what's in git. Someone SSHed in, changed something, and never committed it.
+
+Interviewer: How do you catch this?
+
+Casey: Usually we don't until something breaks. Then we spend hours diffing what's running versus what's supposed to be running. It's maddening.
+
+Interviewer: What about infrastructure as code?
+
+Casey: We use Terraform for the big stuff, but application config is all over the place. Environment variables in Kubernetes, secrets in Vault, feature flags in LaunchDarkly, config files baked into Docker images. No single source of truth.
+
+Interviewer: What would help?
+
+Casey: One place to see ALL config for a service. Current state, desired state, and the diff. With history - who changed what and when. And ideally, the ability to roll back without redeploying.
+
+Interviewer: Is this a daily problem?
+
+Casey: Weekly at minimum. And when it happens during an incident, it adds 30+ minutes of confusion. Last month we had a 2-hour outage that was caused by a config change someone made three weeks earlier. No audit trail, no way to know.

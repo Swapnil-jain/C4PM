@@ -1,0 +1,27 @@
+Interviewee: Maria Gonzalez
+Role: Stay-at-home mom
+Company: N/A (Consumer user)
+Date: 2024-02-10
+User Type: Casual user, free tier
+
+---
+
+Interviewer: Tell me about your experience with our fitness app.
+
+Maria: I downloaded it because my friend recommended it. The first few days were okay, but then I just... stopped opening it. I forget it exists honestly.
+
+Interviewer: What made you stop using it?
+
+Maria: There's no reminder or anything. I set a goal to work out three times a week, but the app never nudges me. By Thursday I realize I haven't opened it since Monday.
+
+Interviewer: Did you try the notification settings?
+
+Maria: There are notification settings? I didn't even know. The app has so many menus, I only use like two screens. The home screen and the workout screen. Everything else is confusing.
+
+Interviewer: What would bring you back?
+
+Maria: Something simple. Like my friend texts me "hey did you work out today?" - that works. But the app feels like homework. I want it to feel like a friend checking in, not a to-do list.
+
+Interviewer: What about the social features?
+
+Maria: I didn't know there were social features. Is there a way to work out with friends? That would be amazing. I'd actually use it if I could see my friend's progress or do challenges together.

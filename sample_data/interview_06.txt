@@ -1,0 +1,159 @@
+Interviewee: Raj Patel
+Role: Senior Product Manager
+Company: Consumer Fintech Startup (Series A, 85 employees)
+Industry: Personal finance / budgeting app
+Date: 2024-02-12
+User Type: Data-Driven PM
+Interview Length: 50 minutes
+
+---
+
+Interviewer: Raj, thanks for joining. Tell me about your product and your role.
+
+Raj: Sure. We're building a budgeting app - think Mint meets YNAB but with AI-powered insights. I own the core budgeting experience. We have about 180,000 monthly active users, around 12,000 paying subscribers. My job is to figure out what features will convert more free users to paid and reduce churn on paid.
+
+Interviewer: What's your biggest challenge right now?
+
+Raj: Understanding why people churn. We have data - lots of it. We know WHEN people churn, we know what their last actions were, we know their engagement patterns. But we don't know WHY. The data tells us what happened but not what users were thinking or feeling.
+
+Interviewer: How do you try to answer the "why"?
+
+Raj: Exit surveys and user interviews. When someone churns, we send a survey. Maybe 8% respond. The responses are all over the place. "Too expensive." "Didn't use it enough." "Found another app." Those are surface-level non-answers. They don't tell me what to fix.
+
+Interviewer: Can you give me a specific example?
+
+Raj: Yeah. Last month I analyzed 200 exit survey responses. Forty said "too expensive." Okay, so lower the price? But wait - our price is $6.99/month. That's less than a coffee. "Too expensive" doesn't mean the absolute price is high - it means the perceived value isn't there. But the survey doesn't tell me WHY they didn't see value.
+
+So I scheduled interviews with 15 churned users. That's where it got interesting. One guy said "I loved the budgeting but I couldn't figure out how to track my investments." Another said "The app told me I was overspending on food but didn't help me actually spend less." A third said "I synced my accounts but the categories were always wrong and I got tired of fixing them."
+
+Three completely different problems, all disguised as "too expensive."
+
+Interviewer: So how do you decide which of those to prioritize?
+
+Raj: That's the thing - I don't have a good system. I take notes during interviews, I try to remember patterns, I discuss with my team. But I'm working with maybe 30 interviews total and 500 survey responses. There's no way I can hold all that context in my head. So I end up making decisions based on which interviews I remember most vividly. That's not systematic.
+
+Interviewer: What tools do you use?
+
+Raj: Notion for notes, Amplitude for behavioral analytics, a Typeform for the exit surveys, Calendly for scheduling interviews. Nothing talks to each other. I manually copy quotes into Notion docs. I have a "user feedback" database with 400 entries that I can barely navigate anymore.
+
+Interviewer: Walk me through your synthesis process.
+
+Raj: Okay, so let's say I want to understand the category miscategorization problem - that's come up multiple times. First I search Notion for "category" - get 47 results. Then I search for "wrong category" - 23 results. Then "miscategorized" - 8 results. Then "transaction" plus "fix" - 31 results. Each search gives me slightly different results because people describe the same problem differently.
+
+Interviewer: How long does that take?
+
+Raj: At least 2-3 hours just to get a comprehensive view of one problem. And I'm still not confident I found everything. Someone might have said "the labels on my spending are always off" - that's the same problem, but I wouldn't find it with my searches.
+
+Interviewer: Then what?
+
+Raj: Then I try to quantify. How many people mentioned this? But counting is hard because one user might have mentioned it three times across different channels - support ticket, NPS comment, and interview. Is that one signal or three? I honestly don't know the right way to count.
+
+Interviewer: How do you prioritize between different problems?
+
+Raj: We use a mix of things. Frequency of mentions - how often does this come up? Severity - is this a mild annoyance or a reason to quit? Revenue impact - are paying users or free users more affected? Strategic fit - does solving this align with where we want to go?
+
+The problem is I'm guessing at most of these. Frequency I can sort of count, but the rest is intuition.
+
+Interviewer: Tell me about a time your intuition was wrong.
+
+Raj: [laughs] The notification debacle. So we were getting lots of feedback about notifications. "Too many notifications." "Annoying alerts." "Stop bothering me." Seemed clear - we needed to reduce notifications. So we did. We cut notification frequency by 60%.
+
+Interviewer: What happened?
+
+Raj: Engagement dropped. Not a little - a lot. Daily active users fell 15% over the next month. Turns out, the people complaining about notifications weren't our core users. Our core users LIKED the reminders - it was the whole point of using a budgeting app. The complainers were casual users who were never going to convert anyway.
+
+Interviewer: How did you figure that out?
+
+Raj: In retrospect, if I'd looked at WHO was complaining, I would have seen it. The anti-notification feedback was mostly from users who opened the app twice a month. Our power users, the ones who logged in daily, never complained about notifications. In fact, a few had asked for MORE reminders. But I treated all feedback equally when I shouldn't have.
+
+Interviewer: What would have helped you see that earlier?
+
+Raj: Segmentation. Not just "what are users saying" but "what are WHICH users saying." If a churned user complains, that's different from a power user requesting something. If an enterprise customer needs something versus a free trial user - different signals. I need to weight feedback by user value, but I don't have a systematic way to do that.
+
+Interviewer: How do you handle conflicting feedback?
+
+Raj: Badly. We have users who want the app to be more automated - "just do it for me, don't ask questions." And we have users who want more control - "let me customize everything, don't make assumptions." Both are valid. Both are paying customers. How do I decide?
+
+Interviewer: How do you decide currently?
+
+Raj: I pick one and hope. Or we try to do both and end up with a confused product that's neither fully automated nor fully customizable. The classic "design by committee" death. We've shipped features with toggle settings that try to please everyone and end up pleasing no one.
+
+Interviewer: What's your relationship with engineering like?
+
+Raj: Good, actually. My tech lead is great. But she pushes back on vague specs. "What problem are we solving?" "Who specifically has this problem?" "How will we know if we succeeded?" Good questions that I don't always have good answers to.
+
+Last sprint I brought her a spec for "improved transaction search." She asked "what are users trying to do when they search? What jobs does search serve?" I didn't know. I'd seen "search is hard to use" in feedback and assumed the answer was "make search better." But that's not a spec, that's a wish.
+
+Interviewer: What should that spec have looked like?
+
+Raj: It should have been grounded in evidence. "Users are searching to find specific merchants to categorize them. Here are 5 quotes showing this. Users are searching to check if a transaction was fraudulent. Here are 3 quotes showing this. These are the two jobs search needs to support. Here's how we'll know we succeeded."
+
+Interviewer: Why didn't you write that spec?
+
+Raj: Time. To write that spec I would have needed to dig through all the search-related feedback, categorize by job-to-be-done, find quotes to support each job, estimate frequency. That's a full day of work for one feature. I have 15 features on my roadmap. I'm cutting corners because I have to.
+
+Interviewer: What would help you move faster?
+
+Raj: Something that does the synthesis work. Take all my feedback - interviews, surveys, tickets - and cluster it by actual problem, not keyword. Show me "here are the 5 main problems users have with search, ranked by how much they impact paying users, with quotes for each." Give me something I can paste into a spec and hand to my tech lead.
+
+Interviewer: How would you want that ranking to work?
+
+Raj: Show me the logic. Don't just say "Problem A is #1." Tell me WHY. "Problem A affects 40% of paying users based on 23 mentions, with high emotional intensity based on language analysis, mentioned by 3 of your churned users in exit interviews." Make it auditable. Let me see if I agree with the weighting.
+
+Interviewer: What if you disagree with the ranking?
+
+Raj: Then let me adjust. Maybe I know something the tool doesn't - like "we're already building a fix for Problem B, so deprioritize it." Or "Problem C aligns with our strategic bet, so boost it." The tool should inform my judgment, not replace it.
+
+Interviewer: Let's talk about evidence chains. Why do they matter?
+
+Raj: Because I have to justify decisions to stakeholders. My CEO will ask "why are we building X instead of Y?" If I say "gut feeling" he loses confidence. If I say "47 users mentioned this problem, here are representative quotes, paying users mention it 3x more than free users, and it correlates with churn" - now we're having a real conversation.
+
+Interviewer: Does that happen today?
+
+Raj: Rarely. I'm usually doing mental math in the meeting. "Um, I think I saw this in a few interviews..." Not convincing. I want to walk into that meeting with receipts.
+
+Interviewer: Tell me about your data science team's involvement.
+
+Raj: We have two data scientists. They're great at behavioral analysis - funnels, cohorts, retention curves. But they can't help with qualitative feedback. When I ask "what are users frustrated about?" they show me drop-off points in the funnel. That tells me WHERE users struggle, not WHY. The why is in the feedback, and they don't have tools to analyze text at scale.
+
+Interviewer: Have you tried AI tools for text analysis?
+
+Raj: I've experimented with ChatGPT. Paste in a bunch of feedback, ask for themes. It kind of works? The themes are often too generic. "Users want better UX." Cool, everyone wants better UX. That's not actionable. I need specifics - WHICH part of the UX, for WHICH users, and WHY does it matter.
+
+Interviewer: What's wrong with the ChatGPT approach?
+
+Raj: No memory, no structure. Every time I start fresh. I can't say "remember the 200 interviews we've discussed" - it doesn't work that way. And the output isn't structured. It's a paragraph of text, not something I can plug into a spec or feed to a coding tool. The last mile is still manual.
+
+Interviewer: How much time do you spend on synthesis work weekly?
+
+Raj: Honestly? Probably 15-20 hours. Out of a 50-hour week. That's reading feedback, trying to find patterns, organizing notes, writing specs. A third of my time is mechanical work that doesn't require my product judgment - it just requires my attention because there's no tool to do it.
+
+Interviewer: What would you do with those hours back?
+
+Raj: Talk to more users. Think about strategy. Coach my junior PM. Experiment with prototypes. Actual PM work instead of document management.
+
+Interviewer: What would an ideal tool do for you?
+
+Raj: Input: all my feedback sources - interviews, surveys, tickets, NPS.
+Processing: cluster by actual problem, not keyword. Weight by user value. Score by frequency and intensity.
+Output: ranked problems with evidence quotes, and a structured spec I can hand to engineering or feed to a coding agent.
+
+Bonus: track changes over time. Are the same problems persisting? Are new problems emerging after a release? Is the feedback sentiment improving?
+
+Interviewer: How would you evaluate if such a tool was working?
+
+Raj: Ship velocity and accuracy. Can I write specs faster? Do the things I ship based on those specs actually move metrics? If I'm still spending 15 hours on synthesis, it's not working. If I cut that to 3 hours AND the features I ship have higher adoption - then it's working.
+
+Interviewer: What would you pay for that?
+
+Raj: For the whole team - me plus my junior PM - probably $200-300/month if it actually worked. If it demonstrably improved our ship rate and reduced build-the-wrong-thing mistakes, more. One wrong feature costs us a month of engineering time. That's $50K+ in fully-loaded cost. If this prevents even two wrong features a year, it's paid for itself many times over.
+
+Interviewer: Any final thoughts?
+
+Raj: Just that I'm frustrated with the state of PM tooling. We have beautiful tools for everything around the actual thinking - project management, documentation, design, analytics. But the core job of "understanding users and deciding what to build" has no good tooling. I'm using the same process I used 10 years ago - manual synthesis. The only thing that's changed is I have MORE feedback to process, not better ways to process it.
+
+I want a tool that's a thinking partner, not just a filing cabinet. Something that reasons, not just stores. That's what's missing.
+
+Interviewer: This has been incredibly valuable, Raj. Thank you.
+
+Raj: My pleasure. Seriously, if you build this, ping me. I'll beta test the hell out of it.

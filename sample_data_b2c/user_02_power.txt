@@ -1,0 +1,27 @@
+Interviewee: Jake Thompson
+Role: Software Engineer
+Company: Tech startup
+Date: 2024-02-11
+User Type: Power user, premium subscriber
+
+---
+
+Interviewer: You've been using the app for 8 months. What keeps you coming back?
+
+Jake: The workout tracking is solid. I can see my progress over time, my lifts are going up, the data doesn't lie. But I almost quit twice.
+
+Interviewer: What almost made you quit?
+
+Jake: The first time was when I lost three weeks of data. I switched phones and my workouts didn't sync. Customer support took a week to respond and basically said "sorry, nothing we can do." I was furious. Three weeks of PRs, gone.
+
+Interviewer: And the second time?
+
+Jake: The app crashed during a workout and didn't save it. I'd just done a huge leg day, personal bests on squats and deadlifts. All gone. I screenshotted my workouts for two months after that because I didn't trust the app.
+
+Interviewer: What's missing that would make it perfect?
+
+Jake: Better sync. Real-time cloud backup. Also, I want to export my data. What if you guys shut down? I have two years of workout history. That's valuable to me. Let me own my data.
+
+Interviewer: Anything else?
+
+Jake: Apple Watch integration is broken. It says "connected" but half my workouts don't show heart rate data. I've given up on it. That's a premium feature I'm paying for that doesn't work.

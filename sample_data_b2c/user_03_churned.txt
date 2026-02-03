@@ -1,0 +1,27 @@
+Interviewee: Lisa Park
+Role: Marketing Manager
+Company: Retail company
+Date: 2024-02-12
+User Type: Churned user (cancelled 2 months ago)
+
+---
+
+Interviewer: You cancelled your premium subscription. Can you tell me why?
+
+Lisa: I wasn't seeing results. Not the app's fault entirely, but the app didn't help me understand WHY I wasn't seeing results.
+
+Interviewer: Can you explain more?
+
+Lisa: I logged workouts for four months. I thought I was doing great. But when I stepped on the scale, nothing changed. The app just showed me "great job, you worked out 4 times this week!" but never said "hey, you're doing the same weight every session" or "your calories seem off."
+
+Interviewer: Did you try the insights feature?
+
+Lisa: The insights are useless. "You worked out more this month than last month." Okay, but am I getting stronger? Am I doing the right exercises for my goals? The app knows I want to lose weight - it asked me during onboarding - but it never connects my workouts to that goal.
+
+Interviewer: What would have kept you subscribed?
+
+Lisa: If it told me what to change. "You've been doing 3 sets of 10 for 6 weeks, try increasing weight" or "Your workout frequency is good but you're not hitting your protein goals." Actionable advice, not just cheerleading.
+
+Interviewer: Did you look for alternatives?
+
+Lisa: I switched to a competitor that has AI coaching. It's not perfect but at least it tells me when I'm plateauing and suggests changes. That's worth $15/month to me.

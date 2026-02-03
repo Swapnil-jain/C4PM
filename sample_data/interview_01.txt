@@ -1,0 +1,31 @@
+Interviewee: Sarah Chen
+Role: Engineering Manager
+Company: Mid-size SaaS startup (50 employees)
+Date: 2024-01-15
+User Type: Power User
+
+---
+
+Interviewer: Tell me about your current workflow for deciding what features to build.
+
+Sarah: Honestly, it's a mess. We have user feedback coming from everywhere - support tickets, sales calls, NPS surveys, Slack messages from customers. Nobody knows where to look first.
+
+Interviewer: How do you prioritize?
+
+Sarah: Our PM tries to synthesize it all, but she's drowning. Last quarter she spent two weeks just reading through support tickets to find patterns. Then she writes these huge PRDs that engineers skim through. Half the time we build something and realize we misunderstood the actual problem.
+
+Interviewer: Can you give me a specific example?
+
+Sarah: Yeah, we built this export feature because "customers wanted exports." Turns out they wanted to get data OUT to analyze it themselves - they didn't care about the export, they cared about the analysis. If we'd understood that, we would have built an analytics dashboard instead. We wasted two sprints.
+
+Interviewer: What tools do you use today?
+
+Sarah: Notion for PRDs, Linear for tickets, Dovetail for research - but nothing connects. Our PM copies and pastes quotes into documents. It's all manual.
+
+Interviewer: If you could wave a magic wand, what would you want?
+
+Sarah: Something that reads all our feedback and tells us "here's what's actually broken, here's the evidence, here's what you should build." Not another dashboard - actual recommendations with reasoning I can trust.
+
+Interviewer: How would you know if you could trust it?
+
+Sarah: Show me the quotes. Show me why you think this matters more than that. Don't just give me a score - explain it like a smart PM would.

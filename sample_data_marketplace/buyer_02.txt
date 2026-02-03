@@ -1,0 +1,27 @@
+Interviewee: Tom Bradley
+Role: Founder/CEO
+Company: Pre-seed startup (3 people)
+Date: 2024-02-17
+User Type: Buyer - Small business (First time hiring)
+
+---
+
+Interviewer: You recently hired your first freelancer through us. How did it go?
+
+Tom: Terrible, honestly. I almost gave up halfway through. The person I hired delivered work that was completely different from what I asked for, and getting a refund was impossible.
+
+Interviewer: What happened exactly?
+
+Tom: I hired someone for a website redesign. Paid $2000 upfront because they had good reviews. They delivered something that looked nothing like the mockups we discussed. When I asked for revisions, they got defensive and said "this is what you asked for." I had no recourse.
+
+Interviewer: Did you try the dispute process?
+
+Tom: I tried. It took three weeks. I had to write essays explaining my position. The freelancer just had to say "I delivered what was asked" and it was my word against theirs. Eventually they sided with me but only gave me 50% back. I lost $1000 and three weeks.
+
+Interviewer: What would have prevented this?
+
+Tom: Milestones with approval. Don't let me pay $2000 upfront for a single deliverable. Break it into chunks. Show me the mockup, I approve, they build it, I approve, we're done. The platform should enforce this, not leave it to freelancers to propose.
+
+Interviewer: Would you use us again?
+
+Tom: Maybe, but I'd do everything differently. Smaller projects, clear milestones, communication in writing. Basically I'd treat every freelancer as potentially adversarial. That's not a great dynamic. I wish the platform protected me better so I could just trust the process.

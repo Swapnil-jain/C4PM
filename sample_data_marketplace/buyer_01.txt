@@ -1,0 +1,27 @@
+Interviewee: Jennifer Chen
+Role: Marketing Director
+Company: Series B startup (80 employees)
+Date: 2024-02-16
+User Type: Buyer - Enterprise ($100k+/year spend)
+
+---
+
+Interviewer: You're a heavy user of freelancers. What's your experience?
+
+Jennifer: I've hired maybe 30 freelancers through the platform. Finding good ones is pure luck. The search and filtering is useless for what I need.
+
+Interviewer: What are you trying to filter for?
+
+Jennifer: Reliability. I don't care if someone has fancy portfolio pieces if they ghost after the first milestone. I want to see: do they meet deadlines? Do they communicate proactively? Do clients rehire them? That data exists but I can't search by it.
+
+Interviewer: What's your hiring process now?
+
+Jennifer: I post a job, get 100 applications, and spend a full day reading through them. 90% are clearly template responses - they didn't even read my requirements. I wish I could auto-filter for "actually read the job post" but there's no way to do that.
+
+Interviewer: What would make hiring easier?
+
+Jennifer: Let me save criteria. I have a checklist: native English, US timezone, portfolio with B2B SaaS work, minimum 3 years on platform. Every time I post a job, I have to manually specify all of that. And some of it I CAN'T specify - like "has worked with similar companies to mine."
+
+Interviewer: Any other pain points?
+
+Jennifer: Invoicing is a disaster. I have 8 active freelancers and I get 8 separate invoices, 8 separate payment confirmations, none of it integrates with our accounting software. I spend half a day every month just on freelancer admin. My time isn't free.

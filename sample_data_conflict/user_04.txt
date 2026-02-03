@@ -1,0 +1,23 @@
+Interviewee: Mike Johnson
+Role: Customer Success Manager
+Company: Our company (vendor side)
+Date: 2024-02-22
+User Type: Internal stakeholder
+
+---
+
+Interviewer: What are you hearing from customers like this fintech?
+
+Mike: They're about to churn. I've had three escalation calls this quarter. The VP Engineering is frustrated, the Product Director is frustrated, even the analysts are complaining.
+
+Interviewer: What's the main ask?
+
+Mike: It depends who you ask. Engineering wants security, Product wants speed, Analysts want a redesign. They all think their thing is most important.
+
+Interviewer: If you could only fix one thing?
+
+Mike: Honestly? Security. If they churn because of a failed audit, we lose the account completely. Speed and design are frustrations - security is existential. But don't tell the Product Director I said that.
+
+Interviewer: Any other patterns you're seeing?
+
+Mike: This isn't unique. Half our enterprise accounts have the same split - technical leaders worry about security, business leaders worry about speed, end users want UX. We need to figure out who to listen to.

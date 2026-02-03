@@ -1,0 +1,31 @@
+Interviewee: David Kim
+Role: Senior Product Manager
+Company: Growth-stage startup (200 employees)
+Date: 2024-01-22
+User Type: Experienced PM
+
+---
+
+Interviewer: What's broken about product discovery tools today?
+
+David: They're all designed for humans as the end consumer. Notion, Productboard, Dovetail - they help you organize and read information. But with AI coding tools now, I don't need pretty documents. I need structured specs that an AI can execute on.
+
+Interviewer: Can you elaborate on that?
+
+David: We use Cursor heavily. My engineers can build features crazy fast if the spec is clear. But I spend 3-4 hours writing PRDs that are basically translating user needs into implementation details. That translation step should be automated.
+
+Interviewer: What's missing from current tools?
+
+David: The connection between "user said X" and "therefore build Y." Current tools help me store user feedback. They don't help me decide what it means or what to do about it. That reasoning step is still 100% manual and it's the bottleneck.
+
+Interviewer: How do you do that reasoning today?
+
+David: Intuition, mostly. Experience. Pattern matching from past products. But it's not systematic or auditable. When leadership asks "why are we building this?" I can give reasons, but I can't show them a clear chain from user evidence to decision.
+
+Interviewer: What would the ideal output look like?
+
+David: A machine-readable spec. JSON or something structured. Problem statement, user stories, acceptance criteria, data model changes, UI wireframe descriptions. Something I can literally feed to Cursor and say "build this." With links back to the evidence so anyone can verify the reasoning.
+
+Interviewer: Does that exist?
+
+David: No. That's why I'm excited about what you're describing. The tools today stop at "here's your organized feedback." They should go all the way to "here's what to build and here's exactly why."

@@ -1,0 +1,15 @@
+Interviewee: Rachel Green
+Role: Operations Manager
+Company: Logistics startup
+Date: 2024-02-23
+User Type: Primary user
+
+---
+
+Interviewer: What's not working for you?
+
+Rachel: Notifications are broken. I set up alerts for delayed shipments and they fire randomly. Sometimes I get 50 alerts in a minute for the same shipment. Sometimes critical delays get no alert at all.
+
+Interviewer: How does this affect you?
+
+Rachel: I've turned off alerts entirely. Which defeats the purpose. Now I manually check the dashboard every hour because I can't trust the system.

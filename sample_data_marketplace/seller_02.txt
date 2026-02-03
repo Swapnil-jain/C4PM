@@ -1,0 +1,27 @@
+Interviewee: Marcus Williams
+Role: Freelance Web Developer
+Company: Solo consultancy
+Date: 2024-02-15
+User Type: Seller - Medium volume ($20k/year on platform)
+
+---
+
+Interviewer: How's your experience on the platform been?
+
+Marcus: Mixed. I get work, but the race to the bottom is killing me. There are developers from overseas charging $10/hour for the same work I charge $75/hour for. And the platform doesn't help clients understand why they should pay more.
+
+Interviewer: How do you compete?
+
+Marcus: I don't, really. I've given up on the public marketplace. All my good clients come from referrals and direct invitations. The platform is just overhead at this point.
+
+Interviewer: What would change that?
+
+Marcus: Help me show my value. I have 50 five-star reviews, 100% completion rate, clients who've hired me 5+ times. But that doesn't matter because I'm listed next to someone with 2 reviews charging a fifth of my rate. There's no way for quality to surface.
+
+Interviewer: What about the "Top Rated" badge?
+
+Marcus: Everyone has it. It's meaningless. I want actual differentiation. Show my repeat client rate. Show that my average project is $5k not $500. Let me target enterprise clients who have budget.
+
+Interviewer: What's the most broken thing?
+
+Marcus: Communication is a nightmare. The messaging system is so clunky that clients ask for my email in the first message. We end up doing everything outside the platform anyway, which means no dispute protection. You've created a system that punishes people for using your system.

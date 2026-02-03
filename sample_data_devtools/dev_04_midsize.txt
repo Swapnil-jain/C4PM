@@ -1,0 +1,27 @@
+Interviewee: Sarah Martinez
+Role: Backend Lead
+Company: Series B e-commerce (40 engineers)
+Date: 2024-02-21
+User Type: Mid-market, production user
+
+---
+
+Interviewer: You've been in production with us for a year. What's your experience?
+
+Sarah: We're dependent on you at this point, which worries me. When you have an outage, we have an outage. And your status page lies.
+
+Interviewer: Can you explain?
+
+Sarah: Last month you had degraded performance for six hours. Our error rates spiked to 15%. But your status page showed "all systems operational" for the first four hours. By the time you acknowledged it, we'd already wasted two hours debugging on our side thinking it was us.
+
+Interviewer: What would help during incidents?
+
+Sarah: Real-time status that actually reflects reality. I'd pay extra for early warning. Even "we're investigating increased error rates" helps - I know to look externally instead of blaming my team. Also, post-mortems. You had three outages last quarter and I still don't know what caused them or if they'll happen again.
+
+Interviewer: What about day-to-day usage?
+
+Sarah: The dashboard is useless for debugging. I can see aggregate metrics but I can't trace a specific failed request. When a customer reports an error, I have no way to find that exact API call. I end up logging everything on my side which is expensive and redundant.
+
+Interviewer: Feature requests?
+
+Sarah: Webhooks. We're polling every 30 seconds for updates because you don't have webhooks. That's thousands of unnecessary API calls per day. You're literally charging us money for a problem you could solve. Also, staging environment that doesn't count against production limits. I can't test properly without fear of hitting rate limits.

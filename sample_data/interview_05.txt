@@ -1,0 +1,117 @@
+Interviewee: Meera Krishnamurthy
+Role: Head of Product
+Company: Series B B2B SaaS (180 employees, $15M ARR)
+Industry: Workflow automation for legal teams
+Date: 2024-02-08
+User Type: Strategic Decision Maker
+Interview Length: 45 minutes
+
+---
+
+Interviewer: Thanks for making time, Meera. Let's start broad - what's the hardest part of your job right now?
+
+Meera: Honestly? It's the constant feeling that I'm making decisions based on incomplete information. We have 340 paying customers, enterprise and mid-market. Every week I get conflicting signals about what to build next. Sales says we're losing deals because of X. Support says users are churning because of Y. The CEO read a competitor announcement and now he wants Z. And I'm supposed to synthesize all of this into a coherent roadmap.
+
+Interviewer: How do you currently handle that synthesis?
+
+Meera: I have a weekly ritual. Every Friday afternoon I block 3 hours - sometimes it takes 4 or 5 - and I go through everything. Support tickets from the week, Gong call recordings that got flagged, Slack messages from our customer success team, NPS responses, churned customer exit interviews. I take notes in a massive Notion doc. Then I try to find patterns.
+
+Interviewer: And does that work?
+
+Meera: [sighs] Sometimes? The problem is I'm human. I have biases. If I talked to a frustrated customer on Tuesday, that conversation is weighing on me more heavily than a ticket from two weeks ago that I barely remember reading. The recency bias is real. Also, I can only hold so much context in my head. By the time I'm reading ticket #47, I've forgotten what ticket #12 said.
+
+Interviewer: Have you tried tools for this?
+
+Meera: We have Productboard. It's fine for organizing feedback, tagging it, linking it to features. But it doesn't think. It doesn't say "hey, these 15 pieces of feedback are actually about the same underlying problem." I still have to make those connections myself. The tool is a fancy filing cabinet, not a thinking partner.
+
+Interviewer: Can you walk me through a specific example where this hurt you?
+
+Meera: Oh god, the audit trail disaster. So we kept hearing "customers want better audit logs." Simple enough, right? We built beautiful, detailed audit logs. Shipped it, announced it, whole big thing.
+
+Interviewer: What happened?
+
+Meera: The feedback didn't stop. Customers were still complaining. We dug in and realized - they didn't actually want to READ audit logs. Legal teams needed to EXPORT them for compliance audits. They needed to hand these logs to external auditors in a specific format. Our beautiful UI was useless for that workflow. We'd solved the wrong problem.
+
+Interviewer: How long did that take to figure out?
+
+Meera: Three months. Three months of building the wrong thing because I pattern-matched "audit logs" to "show more logs" instead of understanding the actual job to be done. If I'd had the actual quotes in front of me, clustered properly, I might have seen it. One customer literally said "I need to give this to our SOC 2 auditor" - that quote existed in our system. I just didn't see it in context.
+
+Interviewer: What would have helped?
+
+Meera: Something that doesn't just store quotes but actually reasons about them. Groups them by underlying problem, not surface-level feature request. Shows me "here are 12 customers talking about compliance workflows, and here's exactly what each of them said." Instead of me having to manually search and read and synthesize.
+
+Interviewer: Tell me about the stakeholder conflicts you mentioned.
+
+Meera: It's brutal. So we have enterprise customers paying $80K/year and mid-market paying $15K/year. The enterprise accounts want deep customization, complex workflows, SSO, audit requirements. Mid-market wants simplicity, fast onboarding, self-serve. Every feature decision is a tradeoff.
+
+Interviewer: How do you resolve those tradeoffs?
+
+Meera: Revenue weighting, mostly. But it's not that simple. Our three biggest enterprise accounts drive 40% of our ARR. So when BigLaw Corp asks for something, leadership listens. But those requests often make the product worse for everyone else. We've shipped "enterprise features" that made onboarding 30% slower for mid-market. Nobody explicitly decided to do that, it just happened because we kept saying yes to the loudest voices.
+
+Interviewer: What's your current prioritization framework?
+
+Meera: We use RICE - Reach, Impact, Confidence, Effort. It's fine in theory. In practice, I'm making up the numbers. What's the "impact" of fixing the document upload flow? I give it a 2 out of 3. Why? Because it feels right. There's no systematic way to derive those scores from actual evidence. I'm just vibes-based product management at that point.
+
+Interviewer: Does leadership accept that?
+
+Meera: They used to. But we brought in a new VP of Engineering last quarter and he's been pushing back. "Why is this a 2 and not a 3? What's the evidence?" And honestly? He's right to ask. I just don't have a good answer. My prioritization doesn't have receipts.
+
+Interviewer: What happens when you're wrong?
+
+Meera: Engineers get demoralized. They can tell when they're building something that doesn't matter. Last year we shipped a feature that got 4% adoption. Four percent! My top engineer asked me, "Did anyone actually want this?" And I had to admit - I thought they did, but I couldn't prove it. He's now interviewing at Stripe.
+
+Interviewer: Let's talk about the synthesis process more. Walk me through a real example.
+
+Meera: Sure. Two weeks ago I was trying to decide whether to prioritize "better permissions" or "workflow templates." Both are real requests. Here's what I did.
+
+I searched Productboard for "permissions" - got 34 pieces of feedback. Then searched for "templates" - got 28. Okay, so permissions has more volume. But is volume the right metric? A single enterprise account mentioned permissions 8 times in different tickets. Is that 8 signals or 1?
+
+Then I tried to read through them. Half the "permissions" feedback was actually about different things. Some wanted role-based access. Some wanted document-level permissions. Some wanted external sharing controls. These are three different features! But they're all tagged "permissions" because that's the word customers used.
+
+Interviewer: So the tagging system failed you?
+
+Meera: The tagging system did what tagging systems do - it organized by keyword, not by problem. I needed something that could understand "these 12 requests are about internal team access control" and "these 8 requests are about sharing documents externally with clients" - those are different problems even though customers use the same words.
+
+Interviewer: How long did that analysis take?
+
+Meera: Four hours. And I still wasn't confident in my decision. I ended up going with permissions because the enterprise accounts cared more, but I couldn't articulate exactly why it would have more impact. I was just weighting revenue.
+
+Interviewer: What about your relationship with engineering?
+
+Meera: Strained, honestly. I write these long PRDs - 8, 10 pages. Engineers skim them. They miss context. Then mid-sprint someone asks a question and I realize they didn't understand the core problem at all. But I can't blame them - the documents are dense and they have their own work to do.
+
+Interviewer: What do they actually need from you?
+
+Meera: My senior engineer told me once: "Just tell me the problem and the constraints. I don't need your solution, I need to understand what success looks like." That was humbling. I was over-specifying implementation and under-specifying the actual user need.
+
+Interviewer: What would an ideal spec look like?
+
+Meera: Clear problem statement with evidence. User stories tied to real quotes. Acceptance criteria that are testable. And honestly - something structured enough that I could hand it to Cursor or Copilot or whatever and say "build this." We're using AI coding tools more and more, but the input to those tools is still a human-written PRD. That's a bottleneck.
+
+Interviewer: You mentioned Cursor - how's your team using it?
+
+Meera: Two of my engineers are using it heavily. They say it's incredible when specs are clear. "Give me a clear problem and I can ship it in a day." But when specs are ambiguous, Cursor generates ambiguous code. Garbage in, garbage out. So now the question isn't "can we build this fast enough" - it's "can we specify this precisely enough."
+
+Interviewer: So the constraint has shifted?
+
+Meera: Completely. Two years ago, engineering capacity was the bottleneck. Now? I can get things built fast. The bottleneck is knowing WHAT to build. And I don't have good tools for that. I have tools for organizing feedback, tools for writing documents, tools for managing projects. But nothing for the actual thinking - the synthesis, the prioritization, the translation from user need to buildable spec.
+
+Interviewer: If something could help with that, what would you pay?
+
+Meera: Depends on how well it worked. If it actually reduced my synthesis time from 5 hours to 1 hour AND improved decision quality? Easily $500/month. Maybe more. I bill my time at $150/hour internally. If this saves me 16 hours a month, it's already paid for itself. And that's ignoring the value of making better decisions.
+
+Interviewer: What would make you not trust a tool like that?
+
+Meera: If I couldn't see the reasoning. "Trust me, build X" is worthless. I need to see: "Build X because customers A, B, and C said these specific things, and here's how I weighted those signals." Make the thinking transparent. Let me audit the logic. If I disagree with how something was weighted, I want to adjust it and see how the recommendation changes.
+
+Interviewer: Last question - what's the cost of the status quo?
+
+Meera: I think we ship the wrong thing about 30% of the time. Not completely wrong - usually adjacent to the real need. But wrong enough that adoption is lower than it should be, customers are less satisfied, and we waste engineering cycles. If I could cut that error rate in half? That's probably worth millions in reduced churn and faster growth. We're not talking about incremental improvement - we're talking about fixing a core dysfunction in how products get built.
+
+Interviewer: Anything else you want to add?
+
+Meera: Just that I'm tired. I'm good at my job, I think. But I spend so much time on mechanical synthesis work that should be automated. Reading tickets, finding patterns, writing specs. I should be talking to customers, thinking strategically, coaching my team. Instead I'm doing data entry and document formatting. It's soul-crushing when I think about it.
+
+Interviewer: Thank you, Meera. This was incredibly helpful.
+
+Meera: Happy to help. If you build something that actually works, I'll be your first customer. I mean it.

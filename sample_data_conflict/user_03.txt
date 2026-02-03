@@ -1,0 +1,19 @@
+Interviewee: Lisa Park
+Role: Data Analyst
+Company: Series C fintech (same company)
+Date: 2024-02-22
+User Type: End user
+
+---
+
+Interviewer: What's frustrating about the product?
+
+Lisa: The interface is from 2010. I spend my day in this tool and it's ugly and clunky. Buttons are in weird places, the color scheme hurts my eyes, nothing is intuitive.
+
+Interviewer: How does this affect your productivity?
+
+Lisa: I'm slower than I should be. I know where everything is now, but it took months to learn. New team members struggle for weeks. We've lost two hires who said "I can't work with this tool."
+
+Interviewer: What would you prioritize?
+
+Lisa: A redesign. Make it beautiful and intuitive. I'd love to actually enjoy using this product instead of dreading it every morning.

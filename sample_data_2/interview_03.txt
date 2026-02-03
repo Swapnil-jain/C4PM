@@ -1,0 +1,23 @@
+Interviewee: Sam Okonkwo
+Role: VP of Engineering
+Company: Healthcare SaaS (80 employees)
+Date: 2024-02-05
+User Type: Executive
+
+---
+
+Interviewer: From a leadership perspective, what's your biggest infrastructure concern?
+
+Sam: I can't answer simple questions. The CEO asks "how reliable are we?" and I have to say "I don't know, let me check with the team." That's embarrassing. I should have a dashboard that tells me our SLOs at a glance.
+
+Interviewer: Don't you have monitoring in place?
+
+Sam: We have monitoring, but it's all technical. Latency percentiles, error rates, throughput. I need business language. "99.2% of customer requests succeeded this week" not "p99 latency was 340ms."
+
+Interviewer: What about reporting to stakeholders?
+
+Sam: That's another pain point. Every month I spend a day manually compiling an infrastructure report for the board. Screenshots from different tools, manually calculated metrics, lots of copy-paste. It should be automatic.
+
+Interviewer: What would make your life easier?
+
+Sam: Executive dashboards that I can share without explanation. Automated reports that go out weekly. And trend lines - are we getting better or worse over time? Right now I genuinely don't know.

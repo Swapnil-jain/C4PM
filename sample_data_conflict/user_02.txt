@@ -1,0 +1,19 @@
+Interviewee: James Chen
+Role: VP Engineering
+Company: Series C fintech (same company as Emma)
+Date: 2024-02-22
+User Type: Enterprise technical leader
+
+---
+
+Interviewer: What's your main concern with our product?
+
+James: Security. We had an audit last month and three findings came from your product. Insecure API endpoints, missing encryption at rest, no audit logging.
+
+Interviewer: How serious are these findings?
+
+James: Our CISO is threatening to pull the plug. We handle financial data - we can't have security gaps. I've been fighting to keep you as a vendor but I'm running out of excuses.
+
+Interviewer: What would fix this?
+
+James: Fix the security issues. I don't care about new features. Don't touch anything else. Just make it secure. We'll deal with slow dashboards - we can't deal with a data breach.

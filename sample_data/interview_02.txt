@@ -1,0 +1,31 @@
+Interviewee: Marcus Johnson
+Role: Head of Product
+Company: Series A B2B platform
+Date: 2024-01-18
+User Type: Decision Maker
+
+---
+
+Interviewer: What's your biggest challenge in product discovery?
+
+Marcus: Time. I have maybe 4 hours a week for actual discovery work. The rest is meetings, roadmap reviews, stakeholder management. So I end up making decisions with incomplete information.
+
+Interviewer: What does that look like in practice?
+
+Marcus: Last month, sales said "enterprise customers need SSO." So we prioritized SSO. Took us 6 weeks. After launch, usage was tiny. Turns out only 2 customers actually needed it - sales was just hearing it loudly because those were big deals. Meanwhile, 80% of our users were struggling with basic onboarding, and we ignored it.
+
+Interviewer: How could you have caught that earlier?
+
+Marcus: If I had seen the data - like "SSO is mentioned by 3% of users but they're high ACV" versus "onboarding issues affect 60% of new signups" - I would have made a different call. But that analysis takes days to do manually.
+
+Interviewer: What happens to all the feedback you collect?
+
+Marcus: It goes into a black hole. We have transcripts from 50+ user calls sitting in Notion. Nobody reads them. It's too much. So we rely on whoever talked to users most recently to summarize, and that's biased.
+
+Interviewer: What would an ideal tool do for you?
+
+Marcus: Take all that messy input - calls, tickets, surveys - and give me a clear picture: these are the top 3 problems, here's who's affected, here's the evidence, here's what solving each one might look like. Then I can actually make informed decisions in my limited time.
+
+Interviewer: Would you trust AI to do that analysis?
+
+Marcus: Only if it shows its work. I don't want a magic answer - I want "here's problem X, mentioned 15 times across 8 interviews, affecting these user segments, with these specific quotes." Then I can verify and decide.

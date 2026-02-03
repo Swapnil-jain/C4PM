@@ -1,0 +1,27 @@
+Interviewee: Robert Kim
+Role: Principal Engineer
+Company: Fortune 500 financial services
+Date: 2024-02-19
+User Type: Enterprise, compliance-heavy
+
+---
+
+Interviewer: You're evaluating us for enterprise adoption. What are the blockers?
+
+Robert: Compliance. We can't use you in production until we check some boxes, and you're making it hard.
+
+Interviewer: What specifically?
+
+Robert: SOC 2 Type II report - where is it? I've asked sales three times. They say "it's coming" but we've been waiting two months. We can't even start the procurement process without it. BAA for HIPAA? Same story. Your security page says "contact us" which means "we don't have it."
+
+Interviewer: What about the technical evaluation?
+
+Robert: Can't do it properly without an on-premise or VPC option. Our security team won't approve sending customer data to a multi-tenant cloud. I know you have "enterprise" plans but they're still shared infrastructure. We need isolation.
+
+Interviewer: What would move you forward?
+
+Robert: Single-tenant deployment option. Even if it costs 10x more, I can get budget for it. What I can't do is get an exception to our security policy. Also, audit logs. We need to prove who accessed what data and when. Your current logging is "API call happened" - I need user-level attribution.
+
+Interviewer: Anything that impressed you?
+
+Robert: Your uptime is good. Documentation is decent. The API design is better than incumbents. But none of that matters if I can't get past compliance. You're losing enterprise deals not because of your product, but because you haven't done the paperwork.

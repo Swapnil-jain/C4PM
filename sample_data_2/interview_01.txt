@@ -1,0 +1,23 @@
+Interviewee: Alex Rivera
+Role: DevOps Engineer
+Company: Fintech startup (30 employees)
+Date: 2024-02-01
+User Type: Technical User
+
+---
+
+Interviewer: What's your biggest frustration with your current deployment pipeline?
+
+Alex: Honestly? The lack of visibility. When something breaks in production, I have no idea if it's my code, the infrastructure, or some third-party service. I spend hours just figuring out WHERE the problem is before I can even start fixing it.
+
+Interviewer: How do you currently diagnose issues?
+
+Alex: I jump between five different dashboards. Datadog for metrics, PagerDuty for alerts, our logging system, AWS console, and then Slack to see if anyone else noticed something. By the time I've checked everything, 45 minutes have passed.
+
+Interviewer: What would help?
+
+Alex: A single place that correlates everything. When an alert fires, show me the relevant logs, the deployment that happened right before, the metrics that changed. Don't make me play detective.
+
+Interviewer: Have you tried any tools for this?
+
+Alex: We tried a few observability platforms but they're either too expensive or too complex to set up. I don't have time to spend two weeks configuring a tool. I need something that works out of the box.
