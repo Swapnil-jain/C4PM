@@ -9,3 +9,4 @@ build/
 venv/
 *.json
 !sample_data/*.json
+notes.txt
