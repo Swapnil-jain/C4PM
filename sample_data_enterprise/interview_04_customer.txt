@@ -1,0 +1,37 @@
+Interviewee: Daniel Park
+Role: VP of Engineering (Customer)
+Company: TradeCo (customer of FinServ Corp, $800M AUM hedge fund)
+Date: 2024-03-15
+User Type: Enterprise Customer
+
+---
+
+Interviewer: Daniel, what's your experience as a FinServ customer?
+
+Daniel: The product is excellent when it works. The problem is I never know when it won't work. We process $20 million in transactions daily through their platform. Last month, there was a 23-minute outage during market hours. I found out from my traders, not from FinServ. Their status page said "investigating" 15 minutes after my traders already couldn't execute orders.
+
+Interviewer: What was the impact?
+
+Daniel: We estimate we missed about $340K in trades during those 23 minutes. But the real cost was the three days of overtime our team spent reconciling positions afterward. We had to manually verify every transaction that was in-flight during the outage. That's $50K in labor costs plus the opportunity cost of what those engineers could have been doing instead.
+
+Interviewer: What do you expect from FinServ regarding reliability?
+
+Daniel: Transparency and speed. Tell me within 2 minutes if something is wrong. Not 15 minutes. I can handle downtime - it happens. I can't handle not knowing it's happening. During that outage, my risk team was making decisions based on positions they didn't know were stale. That's dangerous.
+
+Interviewer: What about the API?
+
+Daniel: We built our execution engine on their API. It's generally solid but error handling is terrible. When their service is degraded, the API doesn't return clear error codes. Sometimes we get a 200 OK but the data inside is stale. That's worse than an error - we process it as if it's real. We've had to build an entire verification layer on our side to validate that FinServ's "success" responses are actually current. That's engineering effort we shouldn't need.
+
+Interviewer: What would you need to stay as a customer?
+
+Daniel: Three things. First, real-time status that I can trust - I want a webhook that tells me the moment something degrades, not when someone remembers to update a web page. Second, latency guarantees - we need sub-200ms for trade execution and I want an SLA that compensates us if they miss it. Third, a proper incident communication process. Not a generic status page - a direct channel where I can talk to their engineering team during an incident.
+
+If those three things don't improve in the next two quarters, we're moving to Bloomberg's platform. It's more expensive but I trust it. I told Amanda this directly in our QBR last week. "I trust your product, I don't trust your operations."
+
+Interviewer: How much more would you pay for better reliability?
+
+Daniel: We pay $840K annually. I'd pay $1.2M for a platform with 99.99% uptime guarantee and real-time incident communication. The 23-minute outage cost us more than the annual price difference. Reliability is not a cost center for us - it's a revenue driver. Every minute of uptime is money my traders can make.
+
+Interviewer: Anything else?
+
+Daniel: Your post-incident reports are jokes. After the outage, we got a two-paragraph email that said "database performance degradation due to increased load." That tells me nothing. What caused the increased load? What are you doing to prevent it? What's the timeline? I need engineer-to-engineer communication, not PR-filtered platitudes. If I can't trust the RCA, I can't trust the platform.

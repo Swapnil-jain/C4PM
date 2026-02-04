@@ -1,0 +1,39 @@
+Interviewee: Robert Kim
+Role: Assistant Superintendent for Curriculum and Instruction
+Company: Same Suburban Public School District
+Date: 2024-02-25
+User Type: Decision Maker - Administrator
+
+---
+
+Interviewer: Robert, what are your technology challenges at the district level?
+
+Robert: We spend $2.8 million per year on educational technology and I can't tell you if any of it works. We have 47 different edtech tools across the district. Some schools use IXL, others use DeltaMath. Some use Nearpod, others use Pear Deck. There's no standardization and no measurement.
+
+Interviewer: Why not standardize?
+
+Robert: Teachers fight it. Every teacher has their preferred tools. When we tried to standardize on one math platform three years ago, we nearly had a revolt. Teachers said "you're taking away the tool that works for my kids." And they weren't wrong - different tools work better for different teaching styles and student populations.
+
+Interviewer: How do you evaluate if a tool is working?
+
+Robert: We can't. The tools don't integrate with our assessment data. I can see that 400 students used Khan Academy last month. But I can't correlate that with test score improvements. Did the students who used Khan more do better on the state assessment? I have no idea because the data lives in different silos.
+
+The state wants us to show evidence that our technology investments are improving student outcomes. I show them usage data because that's all I have. Fifty thousand hours of Khan Academy usage! Great, but did anyone actually learn anything? I can't answer that.
+
+Interviewer: What about student assessment data?
+
+Robert: We assess students to death. MAP testing three times a year, state assessments annually, benchmark assessments quarterly, plus teacher-created assessments. But the data from each assessment is in a different system with different scales. MAP gives me RIT scores. State tests give me performance levels. Teacher grades give me percentages. None of it paints a complete picture of a student's learning journey.
+
+Interviewer: What picture do you wish you had?
+
+Robert: I want to know: "Is Jaylen Cooper learning? What specifically does he understand and not understand? What interventions have been tried and which ones worked?" Right now, to answer that, I'd need to log into five different systems, talk to three teachers, and piece it together manually. For one student. We have 2,400 students. That doesn't scale.
+
+Interviewer: What about equity?
+
+Robert: That's my biggest concern. Our achievement gap data shows that students from low-income families are 2.3 grade levels behind their peers in math. But I can't tell you WHY with any specificity. Is it because they lack access to technology at home? Is it instructional quality? Is it attendance patterns? The data exists in fragments across different systems. If I could see a unified view of learning data across demographics, I could target interventions where they actually matter instead of spreading resources thin.
+
+Interviewer: What would you invest in?
+
+Robert: A learning data platform that connects everything. Student information system, assessment data, classroom tool usage, attendance, behavior - all in one place. Show me patterns. "Students who missed 5+ days in November and didn't complete DeltaMath assignments showed a 15% drop in benchmark scores." THAT's actionable. Telling me the district-wide average went down 2 points is not.
+
+I'd pay significant money for that. We're already spending $2.8 million on tools that don't talk to each other. If one platform could connect them all and show us what's actually working, it would be worth double that.

@@ -7,7 +7,7 @@ setup(
     install_requires=[
         "typer>=0.9.0",
         "rich>=13.0.0",
-        "openai>=1.0.0",
+        "openai>=1.75.0",
         "python-dotenv>=1.0.0",
     ],
     entry_points={

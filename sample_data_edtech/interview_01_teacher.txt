@@ -1,0 +1,45 @@
+Interviewee: Patricia Morales
+Role: High School Math Teacher (AP Calculus, Algebra 2)
+Company: Suburban Public School District (2400 students)
+Date: 2024-02-20
+User Type: Power User - Teacher
+
+---
+
+Interviewer: Patricia, tell me about your experience with your school's learning management system.
+
+Patricia: Canvas is fine for posting assignments. But it's terrible for what I actually need - understanding which students are struggling and WHY. I have 150 students across 5 classes. The LMS tells me who turned in homework and who didn't. It doesn't tell me who is conceptually stuck on derivatives versus who just doesn't care.
+
+Interviewer: How do you figure that out today?
+
+Patricia: Walking around during class, looking at their work, talking to them. But with 32 kids in a room, I might spend 90 seconds with each student per period. That's not enough. The kids who need me most are often the ones who don't raise their hands.
+
+Interviewer: What about the adaptive learning tools?
+
+Patricia: We tried Khan Academy and DeltaMath. Khan is great for practice but it doesn't differentiate well. It gives every kid the same progression. My student who struggles with fractions needs a completely different path than my student who's bored because they already understand the concept.
+
+DeltaMath is better for practice customization but the reporting is useless. It tells me "Jaylen got 6 out of 10 problems right." But I need to know WHICH problems and WHY he got them wrong. Was it a conceptual error or a computation error? Those require completely different interventions.
+
+Interviewer: What interventions do you use?
+
+Patricia: I pull small groups. But choosing who to pull and what to teach them is mostly guesswork based on incomplete data. Yesterday I pulled 6 kids for extra help on integration by parts. Three of them actually struggled with chain rule - a prerequisite concept. I wasted their time and mine because I didn't have the diagnostic data to target the right skill gap.
+
+Interviewer: What about data from tests and quizzes?
+
+Patricia: I manually analyze every test. After each exam, I spend 3-4 hours categorizing errors by type. Was this a sign error? A conceptual misunderstanding? A reading comprehension issue? I enter it all into a spreadsheet. By the time I've finished analyzing, two weeks have passed and the class has moved on.
+
+Interviewer: What would you want instead?
+
+Patricia: Real-time diagnostic data. While students work on problems, I want to know: "Students 4, 17, and 23 are making the same conceptual error on chain rule applications. Here are their specific mistakes." Then I can pull them immediately, address the misconception, and move on. Not wait two weeks for a test to reveal the problem.
+
+Interviewer: How do you communicate student progress to parents?
+
+Patricia: Poorly. The grade in the gradebook is a number. Parents see "78%" and panic. But that 78% could mean the student understands everything except one topic, or could mean they kind of understand everything but make careless errors. The gradebook hides more than it reveals. I write comments on report cards but those are 3 times a year and by then the information is stale.
+
+Interviewer: What about your school's data system?
+
+Patricia: PowerSchool is our student information system. It holds grades, attendance, and demographics. It does NOT hold anything about learning. There's no connection between "Jaylen was absent 3 times in October" and "Jaylen's understanding of polynomial factoring dropped in October." Those two facts live in completely different systems and the correlation is obvious to me but invisible to anyone else.
+
+Interviewer: If you had more time, what would you do differently?
+
+Patricia: I would differentiate instruction for every kid. I know what each of my 150 students needs, more or less. But executing on that knowledge takes time I don't have. Preparing three different versions of each lesson for three skill levels, creating targeted practice, tracking who's improving - that's a full-time job on top of my full-time job. The technology should handle the targeting and tracking so I can focus on actually teaching.

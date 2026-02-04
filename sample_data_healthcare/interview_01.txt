@@ -1,0 +1,39 @@
+Interviewee: Dr. Ananya Sharma
+Role: Chief Medical Officer
+Company: Regional Hospital Network (12 hospitals, 3000 beds)
+Date: 2024-03-01
+User Type: Clinical Decision Maker
+
+---
+
+Interviewer: Dr. Sharma, what are the biggest technology frustrations in your hospitals?
+
+Dr. Sharma: Where do I start? The EHR system is the bane of our existence. Our doctors spend more time typing into Epic than looking at patients. I've watched residents spend 45 minutes documenting a 15-minute patient encounter. That's backwards.
+
+Interviewer: Can you quantify the impact?
+
+Dr. Sharma: We did a time-motion study last year. Our physicians spend 4.5 hours per day on EHR documentation. That's more than direct patient care. Every physician I've spoken to says the same thing - they went into medicine to treat patients, not to be data entry clerks.
+
+Interviewer: What about the clinical decision support systems?
+
+Dr. Sharma: The alerts are a disaster. Our EHR generates about 150 clinical alerts per physician per day. Studies show alert fatigue kicks in at around 20. So our doctors dismiss 95% of alerts without reading them. Last quarter we had a near-miss adverse drug event because a critical drug interaction alert got dismissed along with the noise.
+
+Interviewer: That sounds dangerous.
+
+Dr. Sharma: It is. And I can't even get good data on how dangerous. Our adverse event reporting system is voluntary and paper-based. Nurses tell me they don't report near-misses because the form takes 20 minutes. We're flying blind on patient safety data because the reporting system is too painful to use.
+
+Interviewer: What about interoperability between your hospitals?
+
+Dr. Sharma: Terrible. We have 12 hospitals running three different EHR systems from two vendors. When a patient goes from Hospital A to Hospital B, their records don't follow them in real-time. The HL7 interfaces are fragile - they break every time someone updates a system. Last month we had a patient who got duplicate imaging because the radiologist at Hospital B couldn't see the CT scan from Hospital A.
+
+Interviewer: What's that costing you?
+
+Dr. Sharma: Duplicate tests alone cost us an estimated $4.2 million per year. But the real cost is patient safety. If a doctor doesn't know about a patient's medication list from another facility, they might prescribe something that interacts. We've had cases.
+
+Interviewer: If you could fix one thing, what would it be?
+
+Dr. Sharma: Alert fatigue. If our alerts were smart - if they only fired for truly critical interactions instead of every theoretical possibility - it would save time AND save lives. But every time I bring this up to our IT team, they say "we can't modify the alert rules because of liability." So we're stuck with a system that generates so many alerts that none of them work.
+
+Interviewer: Anything else?
+
+Dr. Sharma: The scheduling system is from 2005. Our patients can't self-schedule. Our call center books 80% of appointments. Patients wait on hold for 12 minutes on average. We're losing patients to competitors who have online scheduling. My CFO estimates we're losing $8 million in annual revenue from patients who give up and go elsewhere.

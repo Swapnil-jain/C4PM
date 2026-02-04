@@ -1,6 +1,7 @@
 """Rank problems by impact using LLM reasoning."""
 
 import json
+import time
 from typing import List, Dict
 from openai import OpenAI
 from rich.console import Console
@@ -11,7 +12,7 @@ RANK_PROMPT = """You are a senior product strategist helping a team decide what 
 
 DATA CONTEXT:
 - Total interviews analyzed: {num_interviews}
-- Note: Be honest about confidence levels based on sample size
+- Be honest about confidence levels. Small samples = lower confidence.
 
 PROBLEMS IDENTIFIED:
 {problems}
@@ -19,40 +20,55 @@ PROBLEMS IDENTIFIED:
 ORIGINAL INTERVIEW CONTEXT:
 {transcripts_summary}
 
-YOUR TASK: Rank these problems by which one the team should solve FIRST.
+YOUR TASK: Create a STRICT RANKING - which problem should be solved FIRST, SECOND, etc.
 
 SCORING FRAMEWORK (be explicit about each factor):
 
-1. REACH (1-3 points)
-   - 1: Affects small subset of users
-   - 2: Affects significant portion
-   - 3: Affects most/all users
+1. REACH (1-5 points)
+   - 1: Only 1 user mentioned it, niche use case
+   - 2: 1-2 users, but represents a broader segment
+   - 3: Multiple users across different roles/segments
+   - 4: Most interviewees mentioned or implied it
+   - 5: Universal - every interviewee is affected
 
-2. INTENSITY (1-3 points)
-   - 1: Annoyance, workaround exists
-   - 2: Significant friction, painful but manageable
-   - 3: Blocker, can't do their job without this
+2. INTENSITY (1-5 points)
+   - 1: Minor annoyance, easy workaround
+   - 2: Noticeable friction, workaround exists but is inconvenient
+   - 3: Significant pain, workarounds are time-consuming
+   - 4: Severe pain, users express strong emotion (e.g., "frustrated", "broken")
+   - 5: Blocker/existential - can't do their job, threatening to leave/churn
 
-3. USER VALUE (1-2 points)
-   - 1: Affects lower-value users (free, small, churning)
-   - 2: Affects high-value users (paying, enterprise, champions)
+3. USER VALUE (1-3 points)
+   - 1: Affects free/trial/low-spend users
+   - 2: Affects paying users or important segments
+   - 3: Affects highest-value users (enterprise, champions, revenue drivers)
 
-4. CONFIDENCE (1-2 points) - BE HONEST ABOUT DATA QUALITY
-   - 1: Mentioned by only 1 user, OR indirect signals, OR small sample size
-   - 2: Mentioned by 2+ users with clear quotes AND strong emotional language
+4. CONFIDENCE (1-3 points) - BE HONEST
+   - 1: Single mention, indirect signal, OR total interviews < 3
+   - 2: 2+ users mentioned it with moderate clarity
+   - 3: 3+ users mentioned it with strong emotional language AND specific examples
 
-   IMPORTANT: If frequency=1, confidence MUST be 1. Don't inflate confidence.
+   HARD RULE: If frequency=1, confidence MUST be 1. No exceptions.
+   HARD RULE: If total interviews < 3, confidence CANNOT exceed 2.
 
-Total possible: 10 points
+Total possible: 16 points
+
+ANTI-TIE RULES:
+- Every problem MUST have a DIFFERENT impact_score. NO TIES.
+- If two problems would tie, compare them HEAD-TO-HEAD:
+  "Problem A vs B: A is more critical because [specific reason with quote]"
+- Force a strict ordering: 1st, 2nd, 3rd, etc.
 
 For EACH problem, provide:
 {{
   "name": "...",
   "description": "...",
   "evidence": [...],
+  "mentioned_by": [{{"name": "...", "role": "..."}}],
   "user_segment": "...",
   "severity": "...",
   "frequency": N,
+  "urgency_signals": [...],
   "scoring": {{
     "reach": {{ "score": N, "reason": "..." }},
     "intensity": {{ "score": N, "reason": "..." }},
@@ -60,16 +76,21 @@ For EACH problem, provide:
     "confidence": {{ "score": N, "reason": "..." }}
   }},
   "impact_score": N,
-  "reasoning": "2-3 sentence synthesis explaining why this ranking makes sense, citing specific quotes",
-  "tradeoffs": "What you'd be giving up by NOT solving this problem"
+  "rank": N,
+  "reasoning": "2-3 sentences citing SPECIFIC quotes with speaker names: 'Sarah (Eng Manager) said X, which shows...'",
+  "tradeoffs": "What happens if you DON'T solve this - be concrete"
 }}
 
-CRITICAL: Your reasoning must cite specific user quotes. Don't just say "users want X" - say "Sarah said 'quote here' which shows..."
+CRITICAL:
+- Cite specific quotes WITH speaker names in reasoning.
+- NO TIES in impact_score. Force differentiation.
+- Preserve the mentioned_by and urgency_signals from the extracted problems.
 
 Respond with JSON object:
 {{
   "ranked_problems": [...],
-  "recommendation": "1-2 sentence executive summary of what to build first and why"
+  "recommendation": "1-2 sentence executive summary of what to build first and why",
+  "head_to_head": "Explain why #1 beats #2, and why #2 beats #3"
 }}
 
 Order by impact_score descending.
@@ -91,10 +112,10 @@ def rank_problems(
     """
     client = OpenAI()
 
-    # Include fuller transcript context for ranking
+    # Include full transcript context for ranking (up to 4000 chars each)
     transcripts_summary = "\n\n".join([
-        f"[{t['filename']} - {t['metadata'].get('role', 'Unknown')}]\n{t['content'][:1500]}..."
-        for t in transcripts[:10]
+        f"[{t['filename']} - {t['metadata'].get('interviewee', 'Unknown')} ({t['metadata'].get('role', 'Unknown')})]\n{t['content'][:4000]}"
+        for t in transcripts[:12]
     ])
 
     prompt = RANK_PROMPT.format(
@@ -106,18 +127,29 @@ def rank_problems(
     if verbose:
         console.print("[dim]Calling GPT for ranking...[/dim]")
 
-    response = client.chat.completions.create(
-        model="gpt-4o",
-        max_tokens=4096,
-        temperature=0.2,  # Very low for consistent ranking
-        messages=[
-            {"role": "system", "content": "You are a product strategist who makes evidence-based recommendations. You always cite specific user quotes to justify your reasoning."},
-            {"role": "user", "content": prompt}
-        ],
-        response_format={"type": "json_object"},
-    )
+    # Retry with backoff for rate limits
+    # Using reasoning model for ranking - better at comparative judgment
+    for attempt in range(3):
+        try:
+            response = client.responses.create(
+                model="gpt-5.1-codex-mini",
+                instructions="You are a product strategist who makes evidence-based recommendations. You always cite specific user quotes to justify your reasoning.",
+                input=prompt,
+                text={"format": {"type": "json_object"}},
+                max_output_tokens=10000,
+                reasoning={"effort": "medium"},
+            )
+            break
+        except Exception as e:
+            if "rate_limit" in str(e).lower() or "429" in str(e):
+                wait = (attempt + 1) * 10
+                if verbose:
+                    console.print(f"[yellow]Rate limited, waiting {wait}s...[/yellow]")
+                time.sleep(wait)
+            else:
+                raise
 
-    response_text = response.choices[0].message.content
+    response_text = response.output_text
 
     try:
         parsed = json.loads(response_text.strip())

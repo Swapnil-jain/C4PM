@@ -1,0 +1,41 @@
+Interviewee: Lisa Nguyen
+Role: Parent (two children in the district, grades 8 and 11)
+Company: Same Suburban Public School District
+Date: 2024-02-27
+User Type: Stakeholder - Parent
+
+---
+
+Interviewer: Lisa, what's your experience with your children's school technology?
+
+Lisa: Confusing. I have two kids and I need to log into four different systems to understand how they're doing. PowerSchool for grades, Canvas for assignments, ParentSquare for messages, and then whatever app the teacher uses for practice - it changes every class.
+
+Interviewer: How do you monitor their progress?
+
+Lisa: I check PowerSchool grades obsessively. My son has a 78% in AP Calc and I'm worried about college. But when I look at the gradebook, I see a list of assignment scores. 85%, 72%, 90%, 65%. I have no idea what topics those correspond to. Is the 65% something he can recover from, or is it a fundamental gap that will compound? I can't tell from a number.
+
+Interviewer: Have you talked to his teacher about this?
+
+Lisa: I emailed Mrs. Morales twice this semester. She responded once, very kindly, but the reply was basically "Jaylen is a good student who needs to be more careful on tests." That tells me nothing I didn't already know. I want to know: what specifically should he work on? What resources should he use? Should I get him a tutor and if so, for what topic?
+
+Interviewer: What about the parent portal?
+
+Lisa: It shows me my kids' grades and attendance. That's it. I can see that Jaylen was absent Tuesday. I can see his test score was 72%. But I can't see his test. I can't see which problems he got wrong. I can't see if he's improving or declining over time. The portal gives me the WHAT but never the WHY.
+
+My daughter in 8th grade has similar issues. She's struggling in science but the grade just shows 81%. Is that good? Bad? Improving? No context whatsoever.
+
+Interviewer: How do you help your kids at home?
+
+Lisa: I hire tutors. I'm paying $80/hour for a calculus tutor for Jaylen. The tutor asks me "what is he working on?" and I say "I don't know, check Canvas." Then the tutor spends the first 15 minutes of each session figuring out what Jaylen needs help with. That's $20 wasted every session because the school technology doesn't communicate what a student is struggling with.
+
+If the school system could tell me - or better, tell the tutor directly - "Jaylen consistently struggles with integration by substitution, specifically when the substitution variable isn't obvious" - the tutor could jump straight to teaching. Instead we're paying for diagnostic time that technology should handle.
+
+Interviewer: What would you want from the school's technology?
+
+Lisa: Two things. First, a single place where I can see everything about my kid's learning - not just grades, but progress, strengths, weaknesses, and what to do next. Second, proactive alerts. Don't wait until the report card to tell me my kid is falling behind. Tell me the week it starts happening so I can intervene early.
+
+The current system only tells me when things are already bad. A 65% on a test is a lagging indicator. I want to know two weeks before that test that he's not understanding the material, so we can get help before the grade tanks.
+
+Interviewer: How much would you pay for better visibility into your kids' learning?
+
+Lisa: I'm already paying $320/month in tutoring fees partly because the school technology doesn't tell me what my kids need. If the school had a system that gave me specific, actionable insights - "Jaylen needs to work on X, here are resources" - I might not need the tutor at all. I'd happily pay $50/month for that information. It would save me $270/month in tutoring.

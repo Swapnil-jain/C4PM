@@ -1,0 +1,39 @@
+Interviewee: Marcus Williams
+Role: Director of Health IT
+Company: Same Regional Hospital Network
+Date: 2024-03-03
+User Type: Technical Leader
+
+---
+
+Interviewer: Marcus, what are your biggest challenges managing health IT?
+
+Marcus: Integration. We're running 147 different software systems across our network. EMR, lab systems, pharmacy, radiology, scheduling, billing, telehealth, patient portals - each one from a different vendor. Getting them to talk to each other is my entire job and we're still failing at it.
+
+Interviewer: How does that manifest day-to-day?
+
+Marcus: Every Monday I get a report of integration failures from the weekend. Average is 12 failures per week. Each one means data didn't flow where it should. A lab result didn't reach the ordering physician. A discharge summary didn't update the patient portal. A medication change didn't propagate to the pharmacy system.
+
+Interviewer: How do you prioritize which integrations to fix?
+
+Marcus: That's the million-dollar question. Our clinical leadership sends me requests constantly. Dr. Sharma wants better alert management. The nursing director wants mobile charting. The CFO wants better revenue cycle data. The compliance officer needs audit logs for HIPAA. I have 47 projects on my backlog and budget for maybe 10.
+
+Interviewer: What tools do you use for this prioritization?
+
+Marcus: ServiceNow for ticket tracking, Jira for development work, and honestly a lot of spreadsheets and gut feeling. I try to prioritize by patient safety impact, but quantifying that is almost impossible. How do you compare "fix the medication interface" versus "implement patient self-scheduling"? One saves lives, the other saves revenue.
+
+Interviewer: Tell me about the alert fatigue Dr. Sharma mentioned.
+
+Marcus: It's a governance problem, not a technical one. We COULD tune the alerts. The EHR has configuration options. But nobody wants to be the person who turned off an alert and then a patient dies. So every alert stays on, new ones get added, and the system becomes useless. We need a framework for evaluating which alerts actually matter based on evidence, not fear.
+
+Interviewer: What about data analytics?
+
+Marcus: We have a data warehouse but it's 18 months behind on useful reports. Our analytics team spends 80% of their time on data quality issues - cleaning, deduplicating, reconciling. By the time they produce a useful report, the question has changed. Our CEO asked for a readmission analysis six months ago. We're still working on it because the data from three different EHRs doesn't reconcile.
+
+Interviewer: What would help you most?
+
+Marcus: Honestly? Something that helps me understand what our clinical staff ACTUALLY needs versus what they ASK for. A nurse says "we need mobile charting" but what she really means is "I waste 20 minutes per shift walking to the workstation to document vitals." If I understood the root problem, I might find a simpler solution. But I don't have time to interview every department head, and when I do, I'm not trained to extract requirements from clinical conversations.
+
+Interviewer: How do you communicate with clinical leadership about technology decisions?
+
+Marcus: Poorly. I speak in systems and interfaces. They speak in patient outcomes and workflows. There's a constant translation problem. Dr. Sharma tells me "the EHR is slow" and I have to figure out whether that means the application performance is poor, the workflow has too many clicks, or the hardware needs upgrading. Usually it's all three, but she doesn't differentiate because to her it's all the same experience.

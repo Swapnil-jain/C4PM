@@ -1,0 +1,41 @@
+Interviewee: Jaylen Cooper
+Role: High School Junior (11th Grade, AP Calculus Student)
+Company: Same Suburban Public School District
+Date: 2024-02-22
+User Type: End User - Student
+
+---
+
+Interviewer: Jaylen, tell me about the technology you use for learning.
+
+Jaylen: Honestly? I use YouTube more than anything my school gives me. When I don't understand something in math, I search "chain rule explained" and watch 3 Minute Math or Professor Leonard. They explain things in ways that make sense. The school stuff feels like it was designed by someone who's never been a student.
+
+Interviewer: What does your school provide?
+
+Jaylen: Canvas for assignments, DeltaMath for practice, and sometimes Khan Academy. Canvas is just a place to download assignments and submit them. DeltaMath is okay but when I get a problem wrong, it just says "incorrect" and shows the answer. It doesn't explain WHY I was wrong. I'm sitting there at 11 PM trying to figure out what I did differently than the solution, and I can't ask anyone.
+
+Interviewer: What happens when you're stuck?
+
+Jaylen: I ask in the group chat. We have a class Discord. Some kids are good at explaining things. But it's random - sometimes someone's online at 11 PM, sometimes not. If no one responds, I just skip the problem and take the hit on my grade. Mrs. Morales says come to office hours, but office hours are during my lunch on Tuesdays and I have practice on Thursdays.
+
+Interviewer: How do you feel about your math grade?
+
+Jaylen: Frustrated. I have a 78% in AP Calc. But I actually understand most of it. The test format kills me. I make dumb mistakes under time pressure. Like I'll forget a negative sign or mess up arithmetic. My understanding is probably a B+ but my grade says C+. And that C+ is what colleges see.
+
+Interviewer: Does the technology help you identify what you need to work on?
+
+Jaylen: No. DeltaMath shows me my score on each assignment. But it doesn't tell me "you keep making sign errors" or "you understand the concept but struggle with multi-step problems." I have to figure that out myself, and honestly I don't know how. I just keep doing more practice and hope it clicks.
+
+Interviewer: What would actually help you?
+
+Jaylen: Something that watches me solve problems and tells me what I keep doing wrong. Not just "wrong answer" but "you correctly set up the integral but then you distributed the negative incorrectly - here's where it happened." Like a tutor who can see my work. And tells me what to practice instead of making me redo the whole assignment.
+
+I also want to know if I'm actually improving or just spinning my wheels. Am I making fewer errors this week than last week? Am I faster? Is my understanding getting better? I have no idea because nobody tracks that.
+
+Interviewer: What about feedback from your teacher?
+
+Jaylen: Mrs. Morales is great when I can get her attention. But there are 32 of us in class. She walks around and helps people but by the time she gets to me, I've usually given up on the problem I was stuck on and moved to something else. The timing never works out.
+
+Interviewer: Anything else about the technology?
+
+Jaylen: Why can't the apps talk to each other? My Khan Academy progress doesn't show up in Canvas. My DeltaMath scores are separate from my gradebook. Mrs. Morales probably doesn't even know I've been watching Khan Academy videos on integration. If she did, she'd know I'm trying. But the systems are all separate so it looks like I'm not putting in effort.

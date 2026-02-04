@@ -2,6 +2,7 @@
 
 import json
 import os
+import time
 from typing import List, Dict
 from openai import OpenAI
 from rich.console import Console
@@ -11,18 +12,27 @@ console = Console()
 EXTRACT_PROMPT = """You are analyzing customer interview transcripts to identify the core product problems.
 
 CRITICAL RULES:
-1. Extract 5-8 DISTINCT problems maximum. Cluster similar issues together.
+1. Extract 4-7 DISTINCT problems maximum. AGGRESSIVELY cluster related issues.
+   - If two problems share the same root cause, MERGE them into one.
+   - "No synthesis tools" and "Manual feedback processing" are the SAME problem. Merge them.
+   - "No evidence for decisions" and "Can't defend priorities" are the SAME problem. Merge them.
+   - Ask yourself: "Would the SAME feature solve both?" If yes, merge.
 2. Evidence MUST be EXACT QUOTES copied verbatim from transcripts. No paraphrasing.
-3. Focus on ROOT CAUSES, not symptoms. "Users can't find X" is a symptom; "Navigation is confusing" is closer to root cause.
-4. Only include problems mentioned by 2+ users OR with strong emotional language (frustration, "huge pain", "broken", etc.)
+   - Format: "Speaker Name (Role): 'exact quote here'"
+   - Always include speaker name and role for attribution.
+3. Focus on ROOT CAUSES, not symptoms. "Users can't find X" is a symptom; "Navigation model is broken" is the root cause.
+4. Only include problems mentioned by 2+ users OR with strong emotional language (frustration, "huge pain", "broken", "terrified", etc.)
 
 For each problem:
-- name: Clear, specific name (3-6 words) describing the problem itself
-- description: What's broken and why it matters (2-3 sentences)
-- evidence: Array of 2-4 EXACT quotes from transcripts (copy-paste, include speaker if known)
+- name: Clear, specific name (3-6 words) describing the ROOT CAUSE
+- description: What's broken and why it matters (2-3 sentences). Be specific to this domain.
+- evidence: Array of 2-4 EXACT quotes with speaker attribution: "Speaker (Role): 'quote'"
+- mentioned_by: Array of objects listing WHO mentioned this: [{{"name": "...", "role": "..."}}]
 - user_segment: Who is affected ("founders", "PMs at growth companies", "engineering managers", etc.)
 - severity: "blocker" (can't do their job) | "major_pain" (significant friction) | "annoyance" (nice to fix)
 - frequency: How many of the {num_transcripts} transcripts mention this?
+- urgency_signals: Array of strong emotional words/phrases from transcripts that indicate urgency (e.g., "soul-crushing", "terrified", "broken", "threatens to leave")
+- conflicts: If users DISAGREE about this problem or want opposite solutions, describe the conflict. Otherwise null.
 
 TRANSCRIPTS:
 {transcripts}
@@ -33,16 +43,23 @@ Respond with a JSON object:
     {{
       "name": "...",
       "description": "...",
-      "evidence": ["exact quote 1", "exact quote 2"],
+      "evidence": ["Speaker (Role): 'exact quote'", "Speaker2 (Role): 'exact quote'"],
+      "mentioned_by": [{{"name": "Speaker", "role": "Role"}}, {{"name": "Speaker2", "role": "Role"}}],
       "user_segment": "...",
       "severity": "blocker|major_pain|annoyance",
-      "frequency": N
+      "frequency": N,
+      "urgency_signals": ["word or phrase 1", "word or phrase 2"],
+      "conflicts": null
     }}
   ],
-  "synthesis_notes": "Brief explanation of how you clustered/prioritized these problems"
+  "synthesis_notes": "Brief explanation of how you clustered these problems. Explain any merges you made."
 }}
 
-Remember: EXACT QUOTES ONLY. Do not paraphrase or summarize user statements.
+QUALITY CHECK before responding:
+- Are any two problems really the same root cause? If yes, MERGE.
+- Does every quote include "Speaker (Role): 'quote'"? If not, FIX.
+- Is frequency accurate? Count carefully.
+- Would a PM reading this know EXACTLY what's broken and WHO is affected?
 """
 
 
@@ -73,18 +90,28 @@ def extract_problems(transcripts: List[Dict], verbose: bool = False) -> List[Dic
     if verbose:
         console.print("[dim]Calling GPT for problem extraction...[/dim]")
 
-    response = client.chat.completions.create(
-        model="gpt-4o",
-        max_tokens=4096,
-        temperature=0.3,  # Lower temperature for more consistent extraction
-        messages=[
-            {"role": "system", "content": "You are a product analyst expert at synthesizing user research into actionable insights. You never paraphrase - you always use exact quotes."},
-            {"role": "user", "content": prompt}
-        ],
-        response_format={"type": "json_object"},
-    )
+    # Retry with backoff for rate limits
+    for attempt in range(3):
+        try:
+            response = client.responses.create(
+                model="gpt-4.1-mini-2025-04-14",
+                instructions="You are a product analyst expert at synthesizing user research into actionable insights. You never paraphrase - you always use exact quotes.",
+                input=prompt,
+                text={"format": {"type": "json_object"}},
+                max_output_tokens=4096,
+                temperature=0.3,
+            )
+            break
+        except Exception as e:
+            if "rate_limit" in str(e).lower() or "429" in str(e):
+                wait = (attempt + 1) * 10
+                if verbose:
+                    console.print(f"[yellow]Rate limited, waiting {wait}s...[/yellow]")
+                time.sleep(wait)
+            else:
+                raise
 
-    response_text = response.choices[0].message.content
+    response_text = response.output_text
 
     try:
         parsed = json.loads(response_text.strip())

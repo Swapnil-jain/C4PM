@@ -1,0 +1,43 @@
+Interviewee: Priya Deshmukh
+Role: Senior Site Reliability Engineer
+Company: FinServ Corp (same company)
+Date: 2024-03-12
+User Type: Technical Practitioner
+
+---
+
+Interviewer: Priya, tell me about your on-call experience.
+
+Priya: It's a nightmare and I'm considering leaving because of it. I was on-call last week. Got paged at 2:17 AM. Alert said "P99 latency > 500ms on payment-service." Okay. I open Datadog. Yes, latency is high. But WHY? Is it the service itself or a downstream dependency? Datadog doesn't tell me.
+
+So I open Jaeger. Look for slow traces. Find one. It shows payment-service calling auth-service calling user-db. The user-db call is slow. Great. Now I open Elastic to check user-db logs. Nothing obvious. Check the RDS metrics in CloudWatch - now I'm in a fifth tool. CPU is fine, connections are fine, but IOPS are maxed. Someone ran an expensive query on the analytics replica and it hit the primary.
+
+Interviewer: How long did that take to figure out?
+
+Priya: 53 minutes from page to root cause identification. Another 20 minutes to kill the query and verify recovery. The actual fix was one SQL kill command. Fifty-three minutes of detective work for a 5-second fix. That ratio is insane.
+
+Interviewer: What made it take so long?
+
+Priya: Context-switching between tools. Every time I switch tools, I lose mental context. I have a theory in my head - "maybe it's the database" - and I need to go verify it in a completely different system with a different query language. Datadog uses DogQL, Elastic uses KQL, CloudWatch has its own thing. I'm not debugging, I'm translating.
+
+Interviewer: What about the alert quality?
+
+Priya: We get about 340 alerts per week. I'd say 15-20 of them represent actual incidents. The rest are noise. We've tried to tune them but the problem is our alerting rules were written over 3 years by 12 different engineers. Nobody owns the full alert configuration. Some alerts have thresholds from when we had 1/10th the traffic. Some are duplicates that fire on the same underlying issue. We spend more time managing alerts than responding to them.
+
+I tried to do an alert audit last quarter. Gave up after a week because the rules are spread across Datadog monitors, PagerDuty rules, custom Prometheus rules, and CloudWatch alarms. There's no single view of "what are we alerting on?"
+
+Interviewer: How does this affect incident response?
+
+Priya: When a real incident happens, we often get 10-15 alerts simultaneously. They're all symptoms of the same root cause but we don't know that immediately. So we have 3 engineers working on what they think are different problems but it's actually one problem manifesting in different services. We've had incidents where engineers were stepping on each other - one person restarting a service while another is debugging it.
+
+Interviewer: What would help?
+
+Priya: Alert correlation and automatic triage. When 15 alerts fire, group them into "this is one incident affecting these services." Show me the dependency graph. Show me which service started degrading first. Show me the blast radius. And for the love of god, don't page 3 engineers for 1 incident.
+
+I also want runbooks that are actually useful. We have runbooks in Confluence but they're outdated. The "database high latency" runbook references a monitoring dashboard that was deleted 6 months ago. We need runbooks that are tied to live data, not static documents.
+
+Interviewer: What about your team's morale?
+
+Priya: Three people left our SRE team this year. We started with 8. Michael's hiring but each replacement takes 6 months to get up to speed. Meanwhile the rest of us cover more on-call shifts. I'm on-call every other week now. It's unsustainable. I have a toddler at home. Getting paged at 2 AM and then spending an hour debugging because the tools don't help - it's destroying my sleep and my family life.
+
+I love this company and I love the technical challenges. But if the tooling doesn't improve in the next quarter, I'm going to start interviewing. I'm too tired to keep doing this.

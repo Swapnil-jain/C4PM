@@ -1,0 +1,45 @@
+Interviewee: David Chen
+Role: Chief Financial Officer
+Company: Same Regional Hospital Network
+Date: 2024-03-07
+User Type: Executive / Business Decision Maker
+
+---
+
+Interviewer: David, what are your biggest technology-related financial concerns?
+
+David: Revenue leakage. We're leaving money on the table everywhere because our systems don't capture charges properly. Our charge capture rate is about 94% - industry best practice is 98%. That 4% gap on a $2 billion revenue base is $80 million. Eighty million dollars we're not billing for services we already provided.
+
+Interviewer: Where does the leakage happen?
+
+David: Multiple places. Physicians don't always document procedures at the right level. The coding team can only code what's documented, and if the documentation is vague, they code conservatively. Our coders tell me they undercode about 15% of encounters because the documentation doesn't support a higher code, even though the physician probably did more than what's documented.
+
+Interviewer: Is this a technology problem or a people problem?
+
+David: Both. The EHR doesn't make it easy to document at the right level. The physician has to navigate through menus to find the right codes. If it's 11 PM and they've been working for 14 hours, they take shortcuts. A tool that intelligently suggested the right documentation level based on what they've already entered would recover millions.
+
+Interviewer: What about the scheduling issue?
+
+David: The scheduling system is costing us directly. We commissioned a study - we lose approximately $8.2 million annually from patients who abandon the scheduling process. They call, wait on hold, get frustrated, hang up, and either go to a competitor or don't seek care. In a region where patient volume drives revenue, losing patients at the front door is catastrophic.
+
+And it's not just the no-shows. Our scheduling inefficiency leads to 14% unfilled appointment slots. That's clinic capacity we're paying for but not using. If we could fill even half of those empty slots, it's worth $12 million.
+
+Interviewer: How do you prioritize technology investments?
+
+David: ROI analysis, theoretically. But the ROI calculations are garbage because we don't have good data. Marcus's team gives me estimates that are honestly guesses. "If we implement mobile charting, nursing efficiency will improve by X%." What's X? Nobody knows. So I'm making $5 million technology investment decisions based on rough estimates and vendor promises.
+
+Interviewer: What data do you wish you had?
+
+David: Real-time financial performance dashboards. Right now, I get month-end financials 3 weeks after the month ends. By then it's too late to do anything about it. If I could see daily revenue trends, charge capture rates, denial rates, and payer mix in real-time, I could make interventions while they still matter.
+
+Interviewer: What about cost reduction?
+
+David: The duplicate testing problem is real. Dr. Sharma quoted $4.2 million and I think that's conservative. But I can't get IT to prioritize interoperability because they're busy keeping the lights on. The 147 systems Marcus manages require constant maintenance. We're spending 85% of our IT budget on keeping existing systems running and only 15% on new capabilities. That ratio needs to flip, but I can't find efficiencies in maintenance without better tools.
+
+Interviewer: Any technology investment you regret?
+
+David: The patient portal. We spent $3 million implementing it two years ago. Adoption is 12%. Twelve percent! Patients don't use it because it's confusing, it doesn't have the features they want, and it's not integrated with anything useful. They can see their lab results but can't message their doctor, schedule appointments, or pay bills. It's a viewing-only portal in a world that expects interaction. That $3 million is essentially written off.
+
+Interviewer: What would you invest in next if budget weren't a constraint?
+
+David: Automated charge capture and a real patient engagement platform - not a portal, a platform. Something that handles scheduling, messaging, billing, and health records in one mobile experience. And better data analytics so I can actually measure the impact of every technology investment we make.

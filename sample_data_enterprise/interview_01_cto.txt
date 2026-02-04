@@ -1,0 +1,42 @@
+Interviewee: Michael Torres
+Role: CTO
+Company: FinServ Corp (Series C, $45M ARR, 400 employees)
+Industry: Financial Services SaaS
+Date: 2024-03-10
+User Type: Technical Executive
+
+---
+
+Interviewer: Michael, what's your biggest infrastructure pain point right now?
+
+Michael: Observability. We're growing 80% year-over-year and our monitoring stack can't keep up. We run about 200 microservices on Kubernetes across three AWS regions. When something breaks at 2 AM - and something always breaks at 2 AM - it takes us 45 minutes on average to even identify which service is the root cause. That's 45 minutes of customer impact on a financial platform where people are moving money.
+
+Interviewer: What monitoring tools do you use?
+
+Michael: Datadog for metrics, PagerDuty for alerting, Elastic for logs, Jaeger for distributed tracing. Four different consoles, four different query languages, four different mental models. When an incident happens, my on-call engineer is context-switching between tabs trying to correlate a metric spike with a log pattern with a trace. It's like trying to solve a puzzle where each piece is in a different room.
+
+Interviewer: How does this affect your team?
+
+Michael: Burnout. Our SRE team turnover is 40% annually. That's insane for a Series C company. In exit interviews, every single engineer says the same thing: "on-call is too stressful." One of my best SREs told me before she left - her exact words were "I dread Sunday night because I know if something breaks, I'll spend two hours staring at dashboards that don't help me." I lost a $200K engineer because of tooling.
+
+Interviewer: What about MTTR?
+
+Michael: Our mean time to resolution is 87 minutes for P1 incidents. Industry benchmark for fintech is under 30 minutes. We're almost 3x the benchmark. And it's not because our engineers are bad - they're excellent. The tooling makes them slow. They can detect something is wrong within 5 minutes. Then they spend 40 minutes in the "what's wrong" phase and another 40 minutes in the "why is it wrong" phase. The detection-to-diagnosis gap is our killer.
+
+Interviewer: What have you tried to fix this?
+
+Michael: We evaluated Honeycomb and Lightstep. Honeycomb is amazing for ad-hoc queries but the learning curve is steep. My junior engineers struggle with it. Lightstep was promising but they got acquired by ServiceNow and the product roadmap went sideways. We looked at Grafana Cloud but it's just dashboards - same problem of multiple tools, just a different color scheme.
+
+We also tried building internal tooling. We have a "correlator" service that our SRE team built. It tries to link metrics anomalies with log patterns. It works about 60% of the time and false-positives the other 40%. Maintaining it is a full-time job that nobody wants.
+
+Interviewer: What would the ideal solution look like?
+
+Michael: One pane of glass that shows me: this service is degraded, here's the metric that proves it, here are the error logs, here's the trace showing the call chain, and here's the likely root cause. All without me having to run queries. The system should do the correlation automatically.
+
+And it needs to understand OUR normal. Our traffic patterns are financial - volume spikes at market open, month-end, quarter-end. An alert at 9:30 AM Eastern is probably related to market open. The tool should know that without me configuring a hundred rules.
+
+Interviewer: What about cost?
+
+Michael: We're spending $380K per year across all our monitoring tools. For that money, I expect more than pretty graphs. I expect intelligence. Tell me what's wrong, why it's wrong, and ideally how to fix it. Not "here's a dashboard, good luck."
+
+If a tool could cut our MTTR from 87 minutes to 30 minutes, I'd pay $500K for it without blinking. Each P1 incident costs us roughly $50K in engineering time, customer impact, and compliance risk. We have about 8 P1s per month. Even a 30% improvement in MTTR would save us more than the tool costs.

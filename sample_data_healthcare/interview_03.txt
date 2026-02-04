@@ -1,0 +1,41 @@
+Interviewee: Jennifer Park, RN
+Role: Nurse Manager, ICU
+Company: Same Regional Hospital Network
+Date: 2024-03-05
+User Type: Clinical End User (Frontline)
+
+---
+
+Interviewer: Jennifer, tell me about your daily experience with the hospital's technology.
+
+Jennifer: I love nursing. I hate the technology. I became a nurse to take care of patients, and I spend half my shift fighting with computers. The charting system requires me to click through 15 screens to document a medication administration. Fifteen screens! For something that takes 30 seconds to actually do.
+
+Interviewer: How much time does documentation take?
+
+Jennifer: My nurses spend about 3 hours per 12-hour shift on documentation. That's 25% of our time not at the bedside. In the ICU, where patients are critically ill, every minute away from the bedside is a risk. I've had situations where a nurse was documenting at the computer and missed a change in a patient's condition that another nurse caught walking by.
+
+Interviewer: What about the alert system?
+
+Jennifer: Oh god, the alerts. My nurses get pop-ups every 2-3 minutes. "Patient is due for repositioning." "Medication is due in 30 minutes." "Lab result available." "Fall risk reassessment needed." Most of them are things we already know. We click "acknowledge" without reading because if we stopped to read every alert, we'd never do anything else.
+
+The dangerous part is when a REAL critical alert comes in - like a dangerous vital sign trend - it looks exactly like the noise. Same pop-up, same sound. There's no visual hierarchy that says "THIS ONE MATTERS."
+
+Interviewer: Have you raised this with IT?
+
+Jennifer: Many times. Marcus is a good guy but he tells me "we can't change the alert configuration without clinical governance approval." And clinical governance meets quarterly. So I submit a request, it goes into a queue, maybe it gets discussed in 3 months, maybe a decision happens in 6, and maybe something changes in 9. Meanwhile my nurses are drowning in alerts.
+
+Interviewer: What other technology problems affect patient care?
+
+Jennifer: Medication reconciliation. When a patient transfers from the ER to the ICU, I'm supposed to reconcile their medication list. But the ER's medication list and the ICU's medication list are in different parts of the EHR, and they don't always match. I've caught discrepancies - a patient was on a blood thinner in the ER that didn't show up in the ICU medication list. If I hadn't caught it, they would have missed a dose.
+
+Interviewer: How often do these discrepancies happen?
+
+Jennifer: We tracked it for a month. 23% of ICU transfers had at least one medication discrepancy. Twenty-three percent. That's terrifying. We catch most of them because our nurses are experienced and thorough. But we shouldn't have to rely on human vigilance to compensate for system failures.
+
+Interviewer: What would your ideal system look like?
+
+Jennifer: I want the computer to help me, not slow me down. Smart documentation that pre-fills based on context. Alerts that only fire when something is genuinely dangerous. A medication list that's always accurate and follows the patient. And honestly - I want to be able to chart at the bedside on a tablet instead of walking to a workstation. Every trip to the workstation is time away from my patient.
+
+Interviewer: What about patient scheduling? Dr. Sharma mentioned that.
+
+Jennifer: That's more of an outpatient problem. In the ICU we don't deal with scheduling. But I will say - when patients get discharged from the ICU to a step-down unit and need follow-up appointments, the process is ridiculous. I have to call the scheduling office, wait on hold, give them all the patient info manually. It should be automatic - patient discharged, follow-up appointment created. But the systems don't talk to each other.

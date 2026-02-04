@@ -1,0 +1,41 @@
+Interviewee: Amanda Liu
+Role: VP of Product
+Company: FinServ Corp (same company)
+Date: 2024-03-14
+User Type: Product Leader
+
+---
+
+Interviewer: Amanda, how does infrastructure reliability affect product decisions?
+
+Amanda: More than you'd think. Our reliability issues directly constrain what we can build. I can't launch features that depend on real-time processing because our system can't guarantee latency under 200ms. That rules out an entire category of features our customers are asking for - real-time fraud detection, instant notifications, live portfolio updates.
+
+Interviewer: How does this manifest?
+
+Amanda: Our enterprise customers are demanding SLA guarantees we can't meet. Three enterprise deals stalled last quarter because we couldn't commit to 99.95% uptime. Our actual uptime last quarter was 99.87%. That doesn't sound bad until you realize the difference is 37 minutes of downtime. For a financial platform, 37 minutes can mean millions in customer losses.
+
+Interviewer: How do you communicate reliability to customers?
+
+Amanda: Poorly. We have a status page but it's embarrassingly inaccurate. Our status page showed "all systems operational" during our biggest outage last year because the status page itself depends on a manual update process. Someone has to log in and change the status. In an outage, the last thing engineers are thinking about is updating the status page.
+
+Our largest customer, representing $4.2M ARR, sent us a letter last month saying they're evaluating alternatives because "we don't trust your system to be honest about its own reliability." That's a direct quote from their VP of Engineering. When customers don't trust your status page, they don't trust your platform.
+
+Interviewer: What about post-incident analysis?
+
+Amanda: We do post-mortems but they're inconsistent. Some are thorough, some are "the database was slow, we restarted it." There's no standard format, no tracking of action items, and no way to see trends across incidents. I asked my team last month "how many incidents were database-related in Q4?" Nobody could answer. That data exists somewhere in Slack threads and Google Docs but it's not searchable or analyzable.
+
+Interviewer: How does this affect your product roadmap?
+
+Amanda: About 30% of our engineering capacity goes to reliability work instead of features. That's not a decision we made - it's a situation we've drifted into. When I plan a quarter, I assume 30% of sprints will be consumed by incident response and reliability improvements. That's capacity I should be using to build competitive features.
+
+And the problem is getting worse, not better. As we add customers and services, the reliability tax grows. We're on a treadmill.
+
+Interviewer: What would you want from a product perspective?
+
+Amanda: An incident management platform that owns the entire lifecycle - from detection to diagnosis to resolution to post-mortem. Not four tools stitched together. One platform where I can see: how reliable are we, what's breaking, why is it breaking, and are we getting better or worse over time.
+
+And I want customer-facing reliability reporting. An automated dashboard I can show to enterprise prospects that says "here's our uptime, here are our incident response times, here's our improvement trend." Right now I'm manually compiling that data for every enterprise deal. It takes my team 3 days to prepare a reliability report for a sales call.
+
+Interviewer: What's the cost of not fixing this?
+
+Amanda: We're going to lose that $4.2M customer. And once one leaves, others follow. Enterprise churn in fintech is contagious - they all talk to each other. If we lose credibility with our top 10 accounts, that's $25M at risk. This is an existential problem, not a nice-to-have.
