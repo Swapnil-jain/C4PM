@@ -18,16 +18,22 @@ def load_transcripts(input_dir: Path) -> List[Dict]:
     """
     transcripts = []
 
-    for ext in ["*.txt", "*.md"]:
-        for filepath in input_dir.glob(ext):
-            content = filepath.read_text(encoding="utf-8")
+    # Collect and sort by filename so ordering is deterministic across runs and
+    # filesystems - important because downstream truncation/slicing depends on it.
+    filepaths = sorted(
+        {fp for ext in ["*.txt", "*.md"] for fp in input_dir.glob(ext)},
+        key=lambda p: p.name,
+    )
 
-            transcript = {
-                "filename": filepath.name,
-                "content": content,
-                "metadata": extract_metadata(content),
-            }
-            transcripts.append(transcript)
+    for filepath in filepaths:
+        content = filepath.read_text(encoding="utf-8")
+
+        transcript = {
+            "filename": filepath.name,
+            "content": content,
+            "metadata": extract_metadata(content),
+        }
+        transcripts.append(transcript)
 
     return transcripts
 

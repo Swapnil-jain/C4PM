@@ -1,10 +1,10 @@
 """Rank problems by impact using LLM reasoning."""
 
 import json
-import time
 from typing import List, Dict
-from openai import OpenAI
 from rich.console import Console
+
+from c4pm.llm import call_with_retry, parse_json_response
 
 console = Console()
 
@@ -110,9 +110,12 @@ def rank_problems(
         - reasoning (why this score)
         - scoring breakdown
     """
-    client = OpenAI()
-
     # Include full transcript context for ranking (up to 4000 chars each)
+    if len(transcripts) > 12:
+        console.print(
+            f"[yellow]Warning: ranking uses only the first 12 of {len(transcripts)} "
+            "interviews for context.[/yellow]"
+        )
     transcripts_summary = "\n\n".join([
         f"[{t['filename']} - {t['metadata'].get('interviewee', 'Unknown')} ({t['metadata'].get('role', 'Unknown')})]\n{t['content'][:4000]}"
         for t in transcripts[:12]
@@ -127,32 +130,21 @@ def rank_problems(
     if verbose:
         console.print("[dim]Calling GPT for ranking...[/dim]")
 
-    # Retry with backoff for rate limits
     # Using reasoning model for ranking - better at comparative judgment
-    for attempt in range(3):
-        try:
-            response = client.responses.create(
-                model="gpt-5.1-codex-mini",
-                instructions="You are a product strategist who makes evidence-based recommendations. You always cite specific user quotes to justify your reasoning.",
-                input=prompt,
-                text={"format": {"type": "json_object"}},
-                max_output_tokens=10000,
-                reasoning={"effort": "medium"},
-            )
-            break
-        except Exception as e:
-            if "rate_limit" in str(e).lower() or "429" in str(e):
-                wait = (attempt + 1) * 10
-                if verbose:
-                    console.print(f"[yellow]Rate limited, waiting {wait}s...[/yellow]")
-                time.sleep(wait)
-            else:
-                raise
+    response = call_with_retry(
+        verbose=verbose,
+        model="gpt-5.4-nano",
+        instructions="You are a product strategist who makes evidence-based recommendations. You always cite specific user quotes to justify your reasoning.",
+        input=prompt,
+        text={"format": {"type": "json_object"}},
+        max_output_tokens=10000,
+        reasoning={"effort": "medium"},
+    )
 
     response_text = response.output_text
 
     try:
-        parsed = json.loads(response_text.strip())
+        parsed = parse_json_response(response_text)
         if isinstance(parsed, dict) and "ranked_problems" in parsed:
             ranked = parsed["ranked_problems"]
             if verbose and "recommendation" in parsed:
@@ -165,11 +157,13 @@ def rank_problems(
         # Sort by impact score descending
         ranked.sort(key=lambda x: x.get("impact_score", 0), reverse=True)
 
-        # Add confidence field for backward compatibility
+        # Map the 1-3 confidence sub-score to a label. The scoring framework
+        # treats 3 as strong evidence, 2 as moderate, 1 as weak - so a 2 is
+        # "medium", not "high".
         for p in ranked:
             if "scoring" in p:
                 conf_score = p["scoring"].get("confidence", {}).get("score", 1)
-                p["confidence"] = "high" if conf_score >= 2 else "medium"
+                p["confidence"] = "high" if conf_score >= 3 else "medium" if conf_score == 2 else "low"
             else:
                 p["confidence"] = "medium"
 

@@ -1,12 +1,12 @@
 """Generate agent-consumable product specs."""
 
 import json
-import time
 from pathlib import Path
 from typing import Dict, List
-from openai import OpenAI
 from rich.console import Console
 from rich.syntax import Syntax
+
+from c4pm.llm import call_with_retry, parse_json_response
 
 console = Console()
 
@@ -77,8 +77,6 @@ def generate_spec(problem: Dict, transcripts: List[Dict]) -> Dict:
     """
     Generate an agent-consumable spec for the top problem.
     """
-    client = OpenAI()
-
     # Format evidence with attribution
     evidence_list = problem.get("evidence", [])
     evidence = "\n".join([f'- "{e}"' for e in evidence_list])
@@ -110,37 +108,26 @@ def generate_spec(problem: Dict, transcripts: List[Dict]) -> Dict:
         transcript_context=transcript_context,
     )
 
-    # Retry with backoff for rate limits
-    for attempt in range(3):
-        try:
-            response = client.responses.create(
-                model="gpt-4.1-mini-2025-04-14",
-                instructions="You are a technical product manager who writes clear, specific, actionable specs. You never write generic requirements - everything is concrete and testable.",
-                input=prompt,
-                text={"format": {"type": "json_object"}},
-                max_output_tokens=6000,
-                temperature=0.3,
-            )
-            break
-        except Exception as e:
-            if "rate_limit" in str(e).lower() or "429" in str(e):
-                wait = (attempt + 1) * 10
-                console.print(f"[yellow]Rate limited, waiting {wait}s...[/yellow]")
-                time.sleep(wait)
-            else:
-                raise
+    response = call_with_retry(
+        model="gpt-5.4-nano",
+        instructions="You are a technical product manager who writes clear, specific, actionable specs. You never write generic requirements - everything is concrete and testable.",
+        input=prompt,
+        text={"format": {"type": "json_object"}},
+        max_output_tokens=6000,
+        temperature=0.3,
+    )
 
     response_text = response.output_text
 
     try:
-        spec = json.loads(response_text.strip())
+        spec = parse_json_response(response_text)
     except json.JSONDecodeError:
         spec = {
             "problem_statement": problem.get("description", ""),
             "user_stories": [],
             "proposed_solution": {
                 "summary": "Unable to generate solution",
-                "ui_changes": [],
+                "key_features": [],
                 "data_model_changes": [],
                 "api_changes": [],
                 "workflow_changes": [],

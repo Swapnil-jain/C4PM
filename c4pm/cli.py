@@ -16,6 +16,7 @@ from c4pm.ingest.loader import load_transcripts
 from c4pm.reasoning.extractor import extract_problems
 from c4pm.reasoning.ranker import rank_problems
 from c4pm.output.spec import generate_spec, output_json
+from c4pm.llm import has_api_key
 
 app = typer.Typer(
     name="c4pm",
@@ -23,6 +24,29 @@ app = typer.Typer(
     add_completion=False,
 )
 console = Console()
+
+
+def _preflight(input_dir: Path):
+    """Validate inputs before doing any (paid) work."""
+    if not has_api_key():
+        console.print(
+            "[red]Error:[/red] OPENAI_API_KEY is not set. "
+            "Add it to your environment or a .env file."
+        )
+        raise typer.Exit(1)
+
+    if not input_dir.exists():
+        console.print(f"[red]Error:[/red] Directory {input_dir} does not exist")
+        raise typer.Exit(1)
+
+    transcripts = load_transcripts(input_dir)
+    if not transcripts:
+        console.print(
+            f"[red]Error:[/red] No .txt or .md transcripts found in {input_dir}"
+        )
+        raise typer.Exit(1)
+
+    return transcripts
 
 
 @app.command()
@@ -33,15 +57,12 @@ def analyze(
 ):
     """Extract and rank problems from customer feedback."""
 
-    if not input_dir.exists():
-        console.print(f"[red]Error:[/red] Directory {input_dir} does not exist")
-        raise typer.Exit(1)
+    transcripts = _preflight(input_dir)
 
     console.print(Panel("C4PM - Analyzing customer feedback", style="blue"))
 
     # Step 1: Load transcripts
     console.print("\n[bold]Loading transcripts...[/bold]")
-    transcripts = load_transcripts(input_dir)
     console.print(f"  Loaded {len(transcripts)} transcripts")
 
     # Show interviewee names
@@ -153,16 +174,17 @@ def spec(
 ):
     """Generate agent-consumable product spec from feedback."""
 
-    if not input_dir.exists():
-        console.print(f"[red]Error:[/red] Directory {input_dir} does not exist")
-        raise typer.Exit(1)
+    transcripts = _preflight(input_dir)
 
     console.print(Panel("C4PM - Generating Product Spec", style="blue"))
 
     # Load and analyze
-    transcripts = load_transcripts(input_dir)
     problems = extract_problems(transcripts, verbose=verbose)
     ranked = rank_problems(problems, transcripts, verbose=verbose)
+
+    if not ranked:
+        console.print("[red]Error:[/red] No problems could be extracted from these transcripts.")
+        raise typer.Exit(1)
 
     # Generate spec for top problem
     top_problem = ranked[0]

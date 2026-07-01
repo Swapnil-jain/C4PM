@@ -1,11 +1,10 @@
 """Extract problems from customer feedback using LLM reasoning."""
 
 import json
-import os
-import time
 from typing import List, Dict
-from openai import OpenAI
 from rich.console import Console
+
+from c4pm.llm import call_with_retry, parse_json_response
 
 console = Console()
 
@@ -70,10 +69,11 @@ def extract_problems(transcripts: List[Dict], verbose: bool = False) -> List[Dic
     Returns list of problem dicts with:
         - name, description, evidence, user_segment, severity, frequency
     """
-    client = OpenAI()
-
-    # Combine transcripts into single context with clear markers
-    combined = "\n\n" + "="*50 + "\n\n".join([
+    # Combine transcripts into single context with clear markers.
+    # Each interview is separated by a divider (note: the divider must be part
+    # of the join separator, otherwise it only appears before the first one).
+    divider = "\n\n" + "=" * 50 + "\n\n"
+    combined = divider + divider.join([
         f"[INTERVIEW: {t['filename']}]\n[Interviewee: {t['metadata'].get('interviewee', 'Unknown')}]\n[Role: {t['metadata'].get('role', 'Unknown')}]\n\n{t['content']}"
         for t in transcripts
     ])
@@ -81,6 +81,10 @@ def extract_problems(transcripts: List[Dict], verbose: bool = False) -> List[Dic
     # Truncate if too long (keep under ~120k chars for GPT-4)
     if len(combined) > 120000:
         combined = combined[:120000] + "\n\n[TRUNCATED]"
+        console.print(
+            "[yellow]Warning: transcripts exceed ~120k chars and were truncated. "
+            "Some interview content was not analyzed.[/yellow]"
+        )
 
     prompt = EXTRACT_PROMPT.format(
         transcripts=combined,
@@ -90,31 +94,20 @@ def extract_problems(transcripts: List[Dict], verbose: bool = False) -> List[Dic
     if verbose:
         console.print("[dim]Calling GPT for problem extraction...[/dim]")
 
-    # Retry with backoff for rate limits
-    for attempt in range(3):
-        try:
-            response = client.responses.create(
-                model="gpt-4.1-mini-2025-04-14",
-                instructions="You are a product analyst expert at synthesizing user research into actionable insights. You never paraphrase - you always use exact quotes.",
-                input=prompt,
-                text={"format": {"type": "json_object"}},
-                max_output_tokens=4096,
-                temperature=0.3,
-            )
-            break
-        except Exception as e:
-            if "rate_limit" in str(e).lower() or "429" in str(e):
-                wait = (attempt + 1) * 10
-                if verbose:
-                    console.print(f"[yellow]Rate limited, waiting {wait}s...[/yellow]")
-                time.sleep(wait)
-            else:
-                raise
+    response = call_with_retry(
+        verbose=verbose,
+        model="gpt-5.4-nano",
+        instructions="You are a product analyst expert at synthesizing user research into actionable insights. You never paraphrase - you always use exact quotes.",
+        input=prompt,
+        text={"format": {"type": "json_object"}},
+        max_output_tokens=4096,
+        temperature=0.3,
+    )
 
     response_text = response.output_text
 
     try:
-        parsed = json.loads(response_text.strip())
+        parsed = parse_json_response(response_text)
         if isinstance(parsed, dict) and "problems" in parsed:
             problems = parsed["problems"]
             if verbose and "synthesis_notes" in parsed:

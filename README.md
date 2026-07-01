@@ -26,7 +26,7 @@ transcripts/          c4pm analyze        c4pm spec
 **Three AI steps, zero manual work:**
 
 1. **Extract** — Clusters raw feedback into 4-7 distinct problems with exact quotes and speaker attribution
-2. **Rank** — Scores each problem on Reach, Intensity, User Value, and Confidence (max 16 points) using a reasoning model
+2. **Rank** — Scores each problem on Reach, Intensity, User Value, and Confidence (max 16 points), using reasoning effort for comparative judgment
 3. **Spec** — Generates a structured JSON spec for the #1 problem with user stories, acceptance criteria, API design, and evidence
 
 ---
@@ -204,13 +204,14 @@ Hard rules enforce honesty:
 ```
 c4pm/
   cli.py              CLI entry point (Typer + Rich)
+  llm.py              Shared OpenAI client, retry/backoff, JSON parsing
   ingest/
     loader.py          Load .txt/.md transcripts, extract metadata
   reasoning/
-    extractor.py       Cluster feedback into problems (gpt-4.1-mini)
-    ranker.py          Score and rank problems (gpt-5.1-codex-mini)
+    extractor.py       Cluster feedback into problems (gpt-5.4-nano)
+    ranker.py          Score and rank problems (gpt-5.4-nano, reasoning effort)
   output/
-    spec.py            Generate structured JSON spec (gpt-4.1-mini)
+    spec.py            Generate structured JSON spec (gpt-5.4-nano)
 ```
 
 ---

@@ -10,3 +10,5 @@ venv/
 *.json
 !sample_data/*.json
 notes.txt
+.DS_Store
+CLAUDE.md
